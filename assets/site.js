@@ -8,13 +8,13 @@ const PRODUCTS = {
   defi52:  { url: "https://payhip.com/VOTRE-LIEN-DEFI52",  price: "2,90 €" },
   dettes:  { url: "https://payhip.com/VOTRE-LIEN-DETTES",  price: "4,90 €" },
   pack:    { url: "https://payhip.com/VOTRE-LIEN-PACK",    price: "9,90 €" },
-  budget_en: { url: "https://payhip.com/YOUR-LINK-BUDGET-EN", price: "$4.90" },
-  defi52_en: { url: "https://payhip.com/YOUR-LINK-52WEEK-EN", price: "$2.90" },
-  dettes_en: { url: "https://payhip.com/YOUR-LINK-DEBT-EN",   price: "$4.90" },
-  pack_en:   { url: "https://payhip.com/YOUR-LINK-BUNDLE-EN", price: "$9.90" },
+  budget_en: { url: "https://payhip.com/YOUR-LINK-BUDGET-EN", price: "€4.90" },
+  defi52_en: { url: "https://payhip.com/YOUR-LINK-52WEEK-EN", price: "€2.90" },
+  dettes_en: { url: "https://payhip.com/YOUR-LINK-DEBT-EN",   price: "€4.90" },
+  pack_en:   { url: "https://payhip.com/YOUR-LINK-BUNDLE-EN", price: "€9.90" },
   // Produits en anglais
-  zakat_en:   { url: "https://payhip.com/YOUR-LINK-ZAKAT-EN",   price: "$6.90" },
-  ramadan_en: { url: "https://payhip.com/YOUR-LINK-RAMADAN-EN", price: "$4.90" },
+  zakat_en:   { url: "https://payhip.com/YOUR-LINK-ZAKAT-EN",   price: "€6.90" },
+  ramadan_en: { url: "https://payhip.com/YOUR-LINK-RAMADAN-EN", price: "€4.90" },
 };
 // ============================================================
 
