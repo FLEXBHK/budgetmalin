@@ -7,11 +7,11 @@ const PRODUCTS = {
   ramadan: { url: "https://payhip.com/VOTRE-LIEN-RAMADAN", price: "3,90 €" },
   defi52:  { url: "https://payhip.com/b/kaFUt",  price: "2,90 €" },
   dettes:  { url: "https://payhip.com/b/6Yv37",  price: "4,90 €" },
-  pack:    { url: "https://payhip.com/BudgetMalinShop",    price: "9,90 €" },
+  pack:    { url: "https://payhip.com/b/ob4lz",    price: "9,90 €" },
   budget_en: { url: "https://payhip.com/b/gnXBe", price: "€4.90" },
   defi52_en: { url: "https://payhip.com/b/zT0V5", price: "€2.90" },
   dettes_en: { url: "https://payhip.com/b/s9FTq",   price: "€4.90" },
-  pack_en:   { url: "https://payhip.com/BudgetMalinShop", price: "€9.90" },
+  pack_en:   { url: "https://payhip.com/b/6P0Ei", price: "€9.90" },
   // Produits en anglais
   zakat_en:   { url: "https://payhip.com/YOUR-LINK-ZAKAT-EN",   price: "€6.90" },
   ramadan_en: { url: "https://payhip.com/YOUR-LINK-RAMADAN-EN", price: "€4.90" },
