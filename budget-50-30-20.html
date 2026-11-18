@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Méthode budget 50/30/20 – Calculateur gratuit pour répartir ses revenus</title>
+<meta name="description" content="Appliquez la règle 50/30/20 à vos revenus : 50 % besoins, 30 % envies, 20 % épargne. Calculateur gratuit et comparaison avec vos dépenses actuelles.">
+<link rel="canonical" href="https://flexbhk.github.io/budgetmalin/budget-50-30-20.html">
+<meta property="og:title" content="Méthode budget 50/30/20 – Calculateur gratuit pour répartir ses revenus">
+<meta property="og:description" content="Appliquez la règle 50/30/20 à vos revenus : 50 % besoins, 30 % envies, 20 % épargne. Calculateur gratuit et comparaison avec vos dépenses actuelles.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://flexbhk.github.io/budgetmalin/budget-50-30-20.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💶</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="./">Budget<span>Malin</span></a>
+  <a class="l" href="salaire-brut-net.html">Brut → Net</a>
+  <a class="l" href="simulateur-pret.html">Prêt</a>
+  <a class="l" href="simulateur-epargne.html">Épargne</a>
+  <a class="l" href="budget-50-30-20.html">Budget 50/30/20</a>
+  <a class="l" href="rembourser-ses-dettes.html">Dettes</a>
+  <a class="l" href="defi-52-semaines.html">Défi 52 semaines</a>
+  <a class="l" href="finance-halal.html">Finance halal</a>
+  <a class="l" href="en/">English</a>
+</div></header>
+<main class="wrap">
+<h1>Budget 50/30/20</h1>
+<p class="lead">La méthode la plus simple pour gérer son budget : 50 % pour les besoins, 30 % pour les envies, 20 % pour l'épargne.</p>
+
+<div class="card">
+  <label for="rev">Revenus nets mensuels (€)</label>
+  <input id="rev" type="number" inputmode="decimal" value="2000">
+  <div class="result">
+    <div class="bar" style="height:22px"><div style="width:50%;background:var(--brand)"></div><div style="width:30%;background:var(--accent)"></div><div style="width:20%;background:var(--ok)"></div></div>
+    <table>
+      <tr><td>🏠 Besoins (50 %) – loyer, courses, transport, factures</td><td id="r-b">–</td></tr>
+      <tr><td>🎉 Envies (30 %) – loisirs, restos, shopping, abonnements</td><td id="r-e">–</td></tr>
+      <tr><td>💰 Épargne (20 %) – précaution, projets, remboursement de dettes</td><td id="r-s">–</td></tr>
+    </table>
+  </div>
+  <h2 style="margin-top:24px;font-size:1.1rem">Comparez avec vos dépenses actuelles</h2>
+  <div class="row">
+    <div><label for="db">Besoins actuels (€)</label><input id="db" type="number" inputmode="decimal" value="1200"></div>
+    <div><label for="de">Envies actuelles (€)</label><input id="de" type="number" inputmode="decimal" value="600"></div>
+  </div>
+  <div class="result" id="r-cmp"></div>
+</div>
+
+
+<div class="cta">
+  <h3>📊 Le Tableur Budget Annuel 2027</h3>
+  <p>12 mois prêts à remplir, catégories automatiques, bilan annuel et graphiques. Compatible Excel, Google Sheets et LibreOffice. Seulement <strong class="prix-produit" data-product="budget"></strong>, téléchargement immédiat.</p>
+  <a class="btn cta-produit" data-product="budget" href="#">Télécharger →</a>
+</div>
+
+<h2>Comment fonctionne la règle 50/30/20 ?</h2>
+<p>Popularisée par la sénatrice américaine Elizabeth Warren, cette méthode répartit vos revenus nets en trois enveloppes :</p>
+<ul>
+  <li><strong>50 % pour les besoins</strong> : tout ce qui est indispensable (logement, alimentation, énergie, transport, assurances, crédits).</li>
+  <li><strong>30 % pour les envies</strong> : ce qui rend la vie agréable mais dont on pourrait se passer.</li>
+  <li><strong>20 % pour l'épargne</strong> : fonds d'urgence, projets futurs, retraite, ou remboursement anticipé de dettes.</li>
+</ul>
+<p>Si votre loyer est élevé, vous pouvez adapter en 60/20/20 ou 70/20/10 : l'essentiel est de garder une part fixe pour l'épargne.</p>
+
+<h2>Questions fréquentes</h2>
+<details><summary>Que faire si mes besoins dépassent 50 % ?</summary><p>C'est fréquent dans les grandes villes. Commencez par renégocier vos contrats (assurance, énergie, téléphone, box) et suivez vos dépenses pendant un mois pour repérer les fuites.</p></details>
+<details><summary>Comment suivre mon budget facilement ?</summary><p>Un tableur avec vos catégories de dépenses suffit. Notre tableur Budget Annuel classe automatiquement vos dépenses selon la méthode 50/30/20.</p></details>
+</main>
+<footer><div class="wrap">
+  <p>Outils gratuits pour gérer son argent, sans inscription. Les résultats sont des estimations indicatives et ne constituent pas un conseil financier.</p>
+  <p>Certains liens peuvent être des liens affiliés : ils ne vous coûtent rien de plus et soutiennent le site. © 2026 BudgetMalin</p>
+</div></footer>
+<script src="assets/site.js"></script>
+<script>
+bindAll(() => {
+  const R = num("rev"), db = num("db"), de = num("de"), ds = R - db - de;
+  document.getElementById("r-b").textContent = eur(R * .5);
+  document.getElementById("r-e").textContent = eur(R * .3);
+  document.getElementById("r-s").textContent = eur(R * .2);
+  const pct = x => R > 0 ? Math.round(x / R * 100) + " %" : "–";
+  const line = (lbl, val, cible, ok) => `<tr><td>${lbl}</td><td>${eur(val)} (${pct(val)}) ${ok ? "✅" : "⚠️"} <span class="note">cible ${cible}</span></td></tr>`;
+  document.getElementById("r-cmp").innerHTML = "<table>" +
+    line("Besoins", db, "50 %", db <= R * .5) + line("Envies", de, "30 %", de <= R * .3) + line("Reste pour épargner", ds, "20 %", ds >= R * .2) + "</table>" +
+    (ds < R * .2 ? `<p class="note">Il vous manque ${eur(R * .2 - ds)} par mois pour atteindre 20 % d'épargne.</p>` : `<p class="note">Bravo, vous épargnez au moins 20 % de vos revenus !</p>`);
+});
+</script>
+
+</body>
+</html>

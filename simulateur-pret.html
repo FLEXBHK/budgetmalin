@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simulateur de prêt immobilier gratuit – Mensualité et coût du crédit</title>
+<meta name="description" content="Calculez la mensualité de votre prêt immobilier ou personnel, le coût total des intérêts et de l'assurance, et votre taux d'endettement. Gratuit et instantané.">
+<link rel="canonical" href="https://flexbhk.github.io/budgetmalin/simulateur-pret.html">
+<meta property="og:title" content="Simulateur de prêt immobilier gratuit – Mensualité et coût du crédit">
+<meta property="og:description" content="Calculez la mensualité de votre prêt immobilier ou personnel, le coût total des intérêts et de l'assurance, et votre taux d'endettement. Gratuit et instantané.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://flexbhk.github.io/budgetmalin/simulateur-pret.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💶</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="./">Budget<span>Malin</span></a>
+  <a class="l" href="salaire-brut-net.html">Brut → Net</a>
+  <a class="l" href="simulateur-pret.html">Prêt</a>
+  <a class="l" href="simulateur-epargne.html">Épargne</a>
+  <a class="l" href="budget-50-30-20.html">Budget 50/30/20</a>
+  <a class="l" href="rembourser-ses-dettes.html">Dettes</a>
+  <a class="l" href="defi-52-semaines.html">Défi 52 semaines</a>
+  <a class="l" href="finance-halal.html">Finance halal</a>
+  <a class="l" href="en/">English</a>
+</div></header>
+<main class="wrap">
+<h1>Simulateur de prêt</h1>
+<p class="lead">Mensualité, coût total et taux d'endettement : sachez exactement ce que votre crédit va vous coûter.</p>
+
+<div class="card">
+  <div class="row">
+    <div><label for="montant">Montant emprunté (€)</label><input id="montant" type="number" inputmode="decimal" value="200000"></div>
+    <div><label for="duree">Durée (années)</label><input id="duree" type="number" value="20" min="1" max="35"></div>
+  </div>
+  <div class="row">
+    <div><label for="taux">Taux d'intérêt annuel (%)</label><input id="taux" type="number" inputmode="decimal" value="3.4" step="0.05"></div>
+    <div><label for="assu">Taux d'assurance annuel (%)</label><input id="assu" type="number" inputmode="decimal" value="0.30" step="0.01"></div>
+  </div>
+  <label for="revenus">Revenus nets mensuels du foyer (€) <span class="note">– facultatif</span></label>
+  <input id="revenus" type="number" inputmode="decimal" value="4500">
+  <div class="result">
+    <div>Mensualité (assurance comprise)</div>
+    <div class="big" id="r-m">–</div>
+    <table>
+      <tr><td>Dont remboursement + intérêts</td><td id="r-hors">–</td></tr>
+      <tr><td>Dont assurance</td><td id="r-a">–</td></tr>
+      <tr><td>Coût total des intérêts</td><td id="r-ci">–</td></tr>
+      <tr><td>Coût total de l'assurance</td><td id="r-ca">–</td></tr>
+      <tr><td>Coût total du crédit</td><td id="r-ct">–</td></tr>
+      <tr><td>Taux d'endettement</td><td id="r-e">–</td></tr>
+    </table>
+    <p class="note" id="r-msg"></p>
+  </div>
+</div>
+
+
+<div class="cta">
+  <h3>📊 Le Tableur Budget Annuel 2027</h3>
+  <p>12 mois prêts à remplir, catégories automatiques, bilan annuel et graphiques. Compatible Excel, Google Sheets et LibreOffice. Seulement <strong class="prix-produit" data-product="budget"></strong>, téléchargement immédiat.</p>
+  <a class="btn cta-produit" data-product="budget" href="#">Télécharger →</a>
+</div>
+
+<h2>Comment est calculée la mensualité ?</h2>
+<p>La mensualité d'un prêt amortissable classique est constante. Elle se calcule avec la formule : <em>M = C × t / (1 − (1 + t)<sup>−n</sup>)</em>, où C est le capital emprunté, t le taux mensuel (taux annuel ÷ 12) et n le nombre de mensualités.</p>
+<p>L'assurance emprunteur s'ajoute généralement sous forme d'un montant fixe calculé sur le capital initial.</p>
+
+<h2>Le taux d'endettement maximum</h2>
+<p>En France, le Haut Conseil de stabilité financière recommande que vos mensualités de crédit ne dépassent pas <strong>35 % de vos revenus nets</strong>, assurance comprise, avec une durée maximale de 25 ans (27 ans pour certains achats dans le neuf).</p>
+
+<h2>Questions fréquentes</h2>
+<details><summary>Comment réduire le coût de mon crédit ?</summary><p>Raccourcir la durée, faire jouer la concurrence entre banques, passer par un courtier, et changer d'assurance emprunteur (possible à tout moment depuis la loi Lemoine) sont les leviers les plus efficaces.</p></details>
+<details><summary>Quel apport faut-il ?</summary><p>Les banques demandent en général un apport d'au moins 10 % du prix, pour couvrir les frais de notaire et de garantie.</p></details>
+</main>
+<footer><div class="wrap">
+  <p>Outils gratuits pour gérer son argent, sans inscription. Les résultats sont des estimations indicatives et ne constituent pas un conseil financier.</p>
+  <p>Certains liens peuvent être des liens affiliés : ils ne vous coûtent rien de plus et soutiennent le site. © 2026 BudgetMalin</p>
+</div></footer>
+<script src="assets/site.js"></script>
+<script>
+bindAll(() => {
+  const C = num("montant"), n = Math.round(num("duree") * 12), t = num("taux") / 100 / 12, rev = num("revenus");
+  const mHors = n > 0 ? (t > 0 ? C * t / (1 - Math.pow(1 + t, -n)) : C / n) : 0;
+  const a = C * num("assu") / 100 / 12, m = mHors + a;
+  const ci = mHors * n - C, ca = a * n;
+  document.getElementById("r-m").textContent = eur(m);
+  document.getElementById("r-hors").textContent = eur(mHors);
+  document.getElementById("r-a").textContent = eur(a);
+  document.getElementById("r-ci").textContent = eur(ci);
+  document.getElementById("r-ca").textContent = eur(ca);
+  document.getElementById("r-ct").textContent = eur(ci + ca);
+  const e = rev > 0 ? m / rev * 100 : 0;
+  document.getElementById("r-e").textContent = rev > 0 ? e.toFixed(1).replace(".", ",") + " %" : "–";
+  document.getElementById("r-msg").textContent = rev <= 0 ? "" : e <= 35 ? "✅ Vous êtes sous la limite recommandée de 35 %." : "⚠️ Au-dessus de 35 % : les banques risquent de refuser. Allongez la durée ou réduisez le montant.";
+});
+</script>
+
+</body>
+</html>

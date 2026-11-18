@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zakat al-Fitr 2027 Calculator – Amount for Your Whole Family</title>
+<meta name="description" content="Calculate zakat al-Fitr (fitrana) for your household: number of people, amount per person, in money or food. When to pay it and who receives it. Any currency.">
+<link rel="canonical" href="https://flexbhk.github.io/budgetmalin/en/zakat-al-fitr-calculator.html">
+<link rel="alternate" hreflang="en" href="https://flexbhk.github.io/budgetmalin/en/zakat-al-fitr-calculator.html">
+<link rel="alternate" hreflang="fr" href="https://flexbhk.github.io/budgetmalin/zakat-al-fitr.html">
+<meta property="og:title" content="Zakat al-Fitr 2027 Calculator – Amount for Your Whole Family">
+<meta property="og:description" content="Calculate zakat al-Fitr (fitrana) for your household: number of people, amount per person, in money or food. When to pay it and who receives it. Any currency.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://flexbhk.github.io/budgetmalin/en/zakat-al-fitr-calculator.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💶</text></svg>">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="./">Budget<span>Malin</span> <small style='font-weight:400;color:var(--muted)'>Islamic Finance</small></a>
+  <a class="l" href="./">Home</a>
+  <a class="l" href="zakat-calculator.html">Zakat calculator</a>
+  <a class="l" href="zakat-al-fitr-calculator.html">Zakat al-Fitr</a>
+  <a class="l" href="../">Français</a>
+</div></header>
+<main class="wrap">
+<h1>Zakat al-Fitr calculator</h1>
+<p class="lead">The end-of-Ramadan charity is due for every member of the household, including children. Get the total in seconds.</p>
+
+<div class="card">
+  <div class="row">
+    <div><label for="cur">Currency</label><select id="cur"><option value="USD">US Dollar ($)</option><option value="GBP">British Pound (£)</option><option value="EUR">Euro (€)</option><option value="CAD">Canadian Dollar</option><option value="AUD">Australian Dollar</option><option value="MYR">Malaysian Ringgit</option><option value="SGD">Singapore Dollar</option><option value="AED">UAE Dirham</option><option value="SAR">Saudi Riyal</option><option value="PKR">Pakistani Rupee</option><option value="INR">Indian Rupee</option><option value="ZAR">South African Rand</option></select></div>
+    <div><label for="mt">Amount per person</label><input id="mt" type="number" inputmode="decimal" value="10" step="0.5"></div>
+  </div>
+  <div class="row">
+    <div><label for="ad">Adults in the household</label><input id="ad" type="number" value="2" min="0"></div>
+    <div><label for="en">Children (including newborns)</label><input id="en" type="number" value="2" min="0"></div>
+  </div>
+  <label for="kg">Food per person (kg)</label><input id="kg" type="number" inputmode="decimal" value="2.5" step="0.1">
+  <p class="note">⚠️ Example amount. Each year, mosques and Islamic organisations in your country announce the recommended amount: use the one your local mosque follows.</p>
+  <div class="result">
+    <div>Total for your household</div>
+    <div class="big" id="r-t">–</div>
+    <table>
+      <tr><td>Number of people</td><td id="r-n">–</td></tr>
+      <tr><td>Food equivalent</td><td id="r-k">–</td></tr>
+    </table>
+  </div>
+</div>
+
+
+<div class="cta">
+  <h3>🌙 Ramadan 2027 Budget Planner</h3>
+  <p>Monthly budget, 30-day iftar planner, zakat al-Fitr and Eid gifts, all in one file. Works with Excel and Google Sheets. Only <strong class="prix-produit" data-product="ramadan_en"></strong>, instant download.</p>
+  <a class="btn cta-produit" data-product="ramadan_en" href="#">Download now →</a>
+</div>
+
+<h2>What is zakat al-Fitr?</h2>
+<p>Zakat al-Fitr (also called <em>sadaqat al-Fitr</em> or <em>fitrana</em>) is an obligatory charity given at the end of Ramadan. It purifies the fasting person from shortcomings during the month and allows those in need to celebrate Eid with dignity.</p>
+
+<h2>How much should I give?</h2>
+<p>Traditionally it is one <strong>sa'</strong> (about 2.5 to 3 kg) of the local staple food: wheat, rice, dates, barley… Some schools of jurisprudence accept its value in money, others prefer food. The amount in money is set each year by religious bodies in each country.</p>
+
+<h2>When should I pay it?</h2>
+<p>It must be given <strong>before the Eid al-Fitr prayer</strong>. It is permissible to give it a day or two before Eid, and many mosques collect it from the second half of Ramadan so they have time to distribute it.</p>
+
+<h2>Frequently asked questions</h2>
+<details><summary>Who has to pay it?</summary><p>Every Muslim who, on the day of Eid, has more than their basic needs. The head of the household pays for themselves and for those they support, including children.</p></details>
+<details><summary>Do I pay for a baby born during Ramadan?</summary><p>Yes, according to most scholars, for a child born before sunset on the last day of Ramadan. For an unborn child it is recommended but not obligatory.</p></details>
+<details><summary>What is the difference with zakat al-mal?</summary><p>Zakat al-mal is due on wealth (2.5% above the nisab, once a year). Zakat al-Fitr is a fixed amount per person linked to the end of Ramadan. <a href="zakat-calculator.html">Calculate your zakat al-mal here</a>.</p></details>
+</main>
+<footer><div class="wrap">
+  <p>Free Islamic personal finance tools, no sign-up required. Results are estimates for educational purposes and do not constitute financial or religious advice.</p>
+  <p>© 2026 BudgetMalin</p>
+</div></footer>
+<script src="../assets/site.js"></script>
+<script>
+bindAll(() => {
+  const c = document.getElementById("cur").value;
+  const n = Math.max(Math.round(num("ad")), 0) + Math.max(Math.round(num("en")), 0);
+  document.getElementById("r-t").textContent = money(n * num("mt"), c);
+  document.getElementById("r-n").textContent = n;
+  document.getElementById("r-k").textContent = (n * num("kg")).toLocaleString("en-US", { maximumFractionDigits: 1 }) + " kg";
+});
+</script>
+
+</body>
+</html>

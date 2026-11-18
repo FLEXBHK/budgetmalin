@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simulateur d'épargne et intérêts composés – Calcul gratuit</title>
+<meta name="description" content="Calculez combien vous aurez en épargnant chaque mois : capital final, intérêts gagnés, évolution année par année. Livret, assurance vie, PEA.">
+<link rel="canonical" href="https://flexbhk.github.io/budgetmalin/simulateur-epargne.html">
+<meta property="og:title" content="Simulateur d'épargne et intérêts composés – Calcul gratuit">
+<meta property="og:description" content="Calculez combien vous aurez en épargnant chaque mois : capital final, intérêts gagnés, évolution année par année. Livret, assurance vie, PEA.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://flexbhk.github.io/budgetmalin/simulateur-epargne.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💶</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="./">Budget<span>Malin</span></a>
+  <a class="l" href="salaire-brut-net.html">Brut → Net</a>
+  <a class="l" href="simulateur-pret.html">Prêt</a>
+  <a class="l" href="simulateur-epargne.html">Épargne</a>
+  <a class="l" href="budget-50-30-20.html">Budget 50/30/20</a>
+  <a class="l" href="rembourser-ses-dettes.html">Dettes</a>
+  <a class="l" href="defi-52-semaines.html">Défi 52 semaines</a>
+  <a class="l" href="finance-halal.html">Finance halal</a>
+  <a class="l" href="en/">English</a>
+</div></header>
+<main class="wrap">
+<h1>Simulateur d'épargne</h1>
+<p class="lead">Combien aurez-vous dans 5, 10 ou 20 ans en mettant un peu de côté chaque mois ? Découvrez la puissance des intérêts composés.</p>
+
+<div class="card">
+  <div class="row">
+    <div><label for="initial">Capital de départ (€)</label><input id="initial" type="number" inputmode="decimal" value="1000"></div>
+    <div><label for="mensuel">Versement mensuel (€)</label><input id="mensuel" type="number" inputmode="decimal" value="100"></div>
+  </div>
+  <div class="row">
+    <div><label for="taux">Rendement annuel (%)</label><input id="taux" type="number" inputmode="decimal" value="3" step="0.1"></div>
+    <div><label for="annees">Durée (années)</label><input id="annees" type="number" value="10" min="1" max="60"></div>
+  </div>
+  <div class="result">
+    <div>Capital final</div>
+    <div class="big" id="r-f">–</div>
+    <div class="bar"><div id="b-v" style="background:var(--brand)"></div><div id="b-i" style="background:var(--accent)"></div></div>
+    <p class="note">■ <span style="color:var(--brand)">Versements</span> &nbsp; ■ <span style="color:var(--accent)">Intérêts</span></p>
+    <table>
+      <tr><td>Total versé</td><td id="r-v">–</td></tr>
+      <tr><td>Intérêts gagnés</td><td id="r-i">–</td></tr>
+    </table>
+    <table id="tab" style="margin-top:14px"></table>
+  </div>
+  <p class="note">Simulation avant impôts et prélèvements sociaux, à rendement constant. Les placements à risque (actions) n'offrent aucune garantie de rendement.</p>
+</div>
+
+
+<div class="cta">
+  <h3>📊 Le Tableur Budget Annuel 2027</h3>
+  <p>12 mois prêts à remplir, catégories automatiques, bilan annuel et graphiques. Compatible Excel, Google Sheets et LibreOffice. Seulement <strong class="prix-produit" data-product="budget"></strong>, téléchargement immédiat.</p>
+  <a class="btn cta-produit" data-product="budget" href="#">Télécharger →</a>
+</div>
+
+<h2>Les intérêts composés, c'est quoi ?</h2>
+<p>Quand vos intérêts sont réinvestis, ils produisent à leur tour des intérêts. Au début l'effet est faible, mais il s'accélère avec le temps : c'est pourquoi <strong>commencer tôt compte plus que le montant épargné</strong>.</p>
+<p>Exemple : 100 € par mois pendant 30 ans à 5 % donnent environ 83 000 €, alors que vous n'aurez versé que 36 000 €.</p>
+
+<h2>Où placer son épargne ?</h2>
+<p>Pour l'épargne de précaution (3 à 6 mois de dépenses), privilégiez les livrets réglementés (Livret A, LDDS, LEP), disponibles à tout moment et sans risque. Pour le long terme, l'assurance vie et le PEA offrent un potentiel de rendement plus élevé, avec une fiscalité avantageuse après quelques années.</p>
+
+<h2>Questions fréquentes</h2>
+<details><summary>Combien épargner chaque mois ?</summary><p>La règle courante est de viser 20 % de ses revenus nets (méthode 50/30/20). Si c'est trop, commencez par 5 % et augmentez progressivement : l'important est la régularité.</p></details>
+<details><summary>Faut-il mettre en place un virement automatique ?</summary><p>Oui : programmer un virement vers votre épargne le jour de la paie est la méthode la plus efficace pour épargner sans y penser.</p></details>
+</main>
+<footer><div class="wrap">
+  <p>Outils gratuits pour gérer son argent, sans inscription. Les résultats sont des estimations indicatives et ne constituent pas un conseil financier.</p>
+  <p>Certains liens peuvent être des liens affiliés : ils ne vous coûtent rien de plus et soutiennent le site. © 2026 BudgetMalin</p>
+</div></footer>
+<script src="assets/site.js"></script>
+<script>
+bindAll(() => {
+  const P = num("initial"), V = num("mensuel"), r = Math.pow(1 + num("taux") / 100, 1 / 12) - 1, Y = Math.min(Math.round(num("annees")), 60);
+  let cap = P, rows = "<tr><td><strong>Année</strong></td><td><strong>Capital</strong></td></tr>";
+  for (let y = 1; y <= Y; y++) {
+    for (let m = 0; m < 12; m++) cap = cap * (1 + r) + V;
+    if (Y <= 15 || y % 5 === 0 || y === Y) rows += `<tr><td>${y}</td><td>${eur(cap)}</td></tr>`;
+  }
+  const vers = P + V * 12 * Y, int = cap - vers;
+  document.getElementById("r-f").textContent = eur(cap);
+  document.getElementById("r-v").textContent = eur(vers);
+  document.getElementById("r-i").textContent = eur(int);
+  document.getElementById("b-v").style.width = (cap > 0 ? vers / cap * 100 : 100) + "%";
+  document.getElementById("b-i").style.width = (cap > 0 ? Math.max(int, 0) / cap * 100 : 0) + "%";
+  document.getElementById("tab").innerHTML = rows;
+});
+</script>
+
+</body>
+</html>

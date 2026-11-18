@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calcul salaire brut en net 2027 – Simulateur gratuit (mensuel et annuel)</title>
+<meta name="description" content="Convertissez votre salaire brut en net en un clic : non-cadre, cadre, fonction publique. Net avant et après prélèvement à la source, mensuel, annuel et horaire.">
+<link rel="canonical" href="https://flexbhk.github.io/budgetmalin/salaire-brut-net.html">
+<meta property="og:title" content="Calcul salaire brut en net 2027 – Simulateur gratuit (mensuel et annuel)">
+<meta property="og:description" content="Convertissez votre salaire brut en net en un clic : non-cadre, cadre, fonction publique. Net avant et après prélèvement à la source, mensuel, annuel et horaire.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://flexbhk.github.io/budgetmalin/salaire-brut-net.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💶</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="./">Budget<span>Malin</span></a>
+  <a class="l" href="salaire-brut-net.html">Brut → Net</a>
+  <a class="l" href="simulateur-pret.html">Prêt</a>
+  <a class="l" href="simulateur-epargne.html">Épargne</a>
+  <a class="l" href="budget-50-30-20.html">Budget 50/30/20</a>
+  <a class="l" href="rembourser-ses-dettes.html">Dettes</a>
+  <a class="l" href="defi-52-semaines.html">Défi 52 semaines</a>
+  <a class="l" href="finance-halal.html">Finance halal</a>
+  <a class="l" href="en/">English</a>
+</div></header>
+<main class="wrap">
+<h1>Calcul du salaire brut en net</h1>
+<p class="lead">Entrez votre salaire brut : on calcule votre net avant impôt, votre net après prélèvement à la source, et votre taux horaire.</p>
+
+<div class="card">
+  <div class="row">
+    <div><label for="brut">Salaire brut (€)</label><input id="brut" type="number" inputmode="decimal" value="2500"></div>
+    <div><label for="periode">Période</label><select id="periode"><option value="m">Mensuel</option><option value="a">Annuel</option></select></div>
+  </div>
+  <div class="row">
+    <div><label for="statut">Statut</label><select id="statut">
+      <option value="0.22">Salarié non-cadre (~22 %)</option>
+      <option value="0.25">Salarié cadre (~25 %)</option>
+      <option value="0.15">Fonction publique (~15 %)</option>
+      <option value="0.10">Apprenti (~10 %)</option>
+    </select></div>
+    <div><label for="mois">Nombre de mois de salaire</label><select id="mois"><option>12</option><option>13</option><option>14</option></select></div>
+  </div>
+  <div class="row">
+    <div><label for="temps">Temps de travail (%)</label><input id="temps" type="number" value="100" min="1" max="100"></div>
+    <div><label for="pas">Taux de prélèvement à la source (%)</label><input id="pas" type="number" inputmode="decimal" value="0" step="0.1"></div>
+  </div>
+  <div class="result">
+    <div>Net mensuel avant impôt</div>
+    <div class="big" id="r-net">–</div>
+    <table>
+      <tr><td>Net mensuel après impôt</td><td id="r-netap">–</td></tr>
+      <tr><td>Net annuel avant impôt</td><td id="r-neta">–</td></tr>
+      <tr><td>Net annuel après impôt</td><td id="r-netaap">–</td></tr>
+      <tr><td>Brut mensuel</td><td id="r-brutm">–</td></tr>
+      <tr><td>Net horaire</td><td id="r-h">–</td></tr>
+      <tr><td>Cotisations salariales / mois</td><td id="r-cot">–</td></tr>
+    </table>
+  </div>
+  <p class="note">Estimation basée sur des taux de cotisations moyens. Le montant exact dépend de votre convention collective, de votre mutuelle et de votre situation.</p>
+</div>
+
+
+<div class="cta">
+  <h3>📊 Le Tableur Budget Annuel 2027</h3>
+  <p>12 mois prêts à remplir, catégories automatiques, bilan annuel et graphiques. Compatible Excel, Google Sheets et LibreOffice. Seulement <strong class="prix-produit" data-product="budget"></strong>, téléchargement immédiat.</p>
+  <a class="btn cta-produit" data-product="budget" href="#">Télécharger →</a>
+</div>
+
+<h2>Comment passer du brut au net ?</h2>
+<p>Le salaire brut est le montant avant déduction des cotisations sociales salariales (retraite, assurance chômage, CSG, CRDS…). Pour obtenir le net, on retire environ <strong>22 % pour un salarié non-cadre</strong>, <strong>25 % pour un cadre</strong> et <strong>15 % dans la fonction publique</strong>.</p>
+<p>Depuis 2019, l'impôt sur le revenu est en plus prélevé directement sur la fiche de paie : c'est le prélèvement à la source. Votre taux personnalisé figure sur votre avis d'imposition et dans votre espace sur impots.gouv.fr.</p>
+
+<h2>Questions fréquentes</h2>
+<details><summary>Combien fait 2 000 € brut en net ?</summary><p>Pour un salarié non-cadre, 2 000 € brut correspondent à environ 1 560 € net par mois avant impôt. Pour un cadre, environ 1 500 €.</p></details>
+<details><summary>Quelle différence entre net et net à payer ?</summary><p>Le « net à payer avant impôt » est le salaire après cotisations. Le « net payé » ou « net versé » est ce qui arrive sur votre compte après prélèvement à la source.</p></details>
+<details><summary>Comment calculer mon salaire horaire net ?</summary><p>Pour un temps plein (35 h/semaine), on divise le net mensuel par 151,67 heures.</p></details>
+</main>
+<footer><div class="wrap">
+  <p>Outils gratuits pour gérer son argent, sans inscription. Les résultats sont des estimations indicatives et ne constituent pas un conseil financier.</p>
+  <p>Certains liens peuvent être des liens affiliés : ils ne vous coûtent rien de plus et soutiennent le site. © 2026 BudgetMalin</p>
+</div></footer>
+<script src="assets/site.js"></script>
+<script>
+bindAll(() => {
+  const mois = num("mois"), taux = num("statut"), t = Math.min(Math.max(num("temps"), 1), 100) / 100, pas = num("pas") / 100;
+  let brutA = num("brut") * (document.getElementById("periode").value === "a" ? 1 : mois);
+  const brutM = brutA / mois, netM = brutM * (1 - taux), netA = brutA * (1 - taux);
+  document.getElementById("r-net").textContent = eur(netM);
+  document.getElementById("r-netap").textContent = eur(netM * (1 - pas));
+  document.getElementById("r-neta").textContent = eur(netA);
+  document.getElementById("r-netaap").textContent = eur(netA * (1 - pas));
+  document.getElementById("r-brutm").textContent = eur(brutM);
+  document.getElementById("r-h").textContent = eur(netA / 12 / (151.67 * t), 2);
+  document.getElementById("r-cot").textContent = eur(brutM - netM);
+});
+</script>
+
+</body>
+</html>

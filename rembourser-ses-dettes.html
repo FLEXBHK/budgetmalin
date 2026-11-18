@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rembourser ses dettes : méthode boule de neige ou avalanche – Simulateur gratuit</title>
+<meta name="description" content="Simulez le remboursement de vos crédits avec la méthode boule de neige et la méthode avalanche : date de libération, intérêts payés, ordre de remboursement. Gratuit.">
+<link rel="canonical" href="https://flexbhk.github.io/budgetmalin/rembourser-ses-dettes.html">
+<meta property="og:title" content="Rembourser ses dettes : méthode boule de neige ou avalanche – Simulateur gratuit">
+<meta property="og:description" content="Simulez le remboursement de vos crédits avec la méthode boule de neige et la méthode avalanche : date de libération, intérêts payés, ordre de remboursement. Gratuit.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://flexbhk.github.io/budgetmalin/rembourser-ses-dettes.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💶</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="./">Budget<span>Malin</span></a>
+  <a class="l" href="salaire-brut-net.html">Brut → Net</a>
+  <a class="l" href="simulateur-pret.html">Prêt</a>
+  <a class="l" href="simulateur-epargne.html">Épargne</a>
+  <a class="l" href="budget-50-30-20.html">Budget 50/30/20</a>
+  <a class="l" href="rembourser-ses-dettes.html">Dettes</a>
+  <a class="l" href="defi-52-semaines.html">Défi 52 semaines</a>
+  <a class="l" href="finance-halal.html">Finance halal</a>
+  <a class="l" href="en/">English</a>
+</div></header>
+<main class="wrap">
+<h1>Rembourser ses dettes plus vite</h1>
+<p class="lead">Listez vos crédits et votre effort mensuel : on compare la méthode <strong>boule de neige</strong> et la méthode <strong>avalanche</strong> et on calcule votre date de libération.</p>
+
+<div class="card">
+  <div id="debts"></div>
+  <p><a href="#" id="add">+ Ajouter une dette</a></p>
+  <label for="extra">Effort supplémentaire chaque mois (€)</label>
+  <input id="extra" type="number" inputmode="decimal" value="100">
+  <div class="result">
+    <table>
+      <tr><td></td><td>Boule de neige</td><td>Avalanche</td></tr>
+      <tr><td>Libéré(e) dans</td><td id="s-m">–</td><td id="a-m">–</td></tr>
+      <tr><td>Intérêts payés</td><td id="s-i">–</td><td id="a-i">–</td></tr>
+      <tr><td>Sans effort supplémentaire</td><td colspan="2" id="base">–</td></tr>
+    </table>
+    <p id="msg" style="margin:10px 0 0"></p>
+  </div>
+</div>
+
+
+<div class="cta">
+  <h3>🎯 Le Plan Sortir des dettes</h3>
+  <p>Listez vos crédits : le tableur compare boule de neige et avalanche, calcule votre date de libération et l'ordre de remboursement. Compatible Excel et Google Sheets. Seulement <strong class="prix-produit" data-product="dettes"></strong>, téléchargement immédiat.</p>
+  <a class="btn cta-produit" data-product="dettes" href="#">Télécharger →</a>
+</div>
+
+<h2>La méthode boule de neige</h2>
+<p>On paie le minimum sur toutes les dettes, et on met tout l'effort supplémentaire sur la <strong>plus petite dette</strong>. Quand elle est soldée, sa mensualité s'ajoute au remboursement de la suivante : la « boule de neige » grossit. Les premières victoires arrivent vite, ce qui aide énormément à tenir.</p>
+
+<h2>La méthode avalanche</h2>
+<p>Même principe, mais on attaque d'abord la dette au <strong>taux d'intérêt le plus élevé</strong> (souvent la carte revolving). C'est mathématiquement la méthode qui coûte le moins cher.</p>
+
+<h2>Laquelle choisir ?</h2>
+<p>Si l'écart d'intérêts est faible, choisissez la boule de neige : la motivation compte plus que quelques euros. Si vous avez un crédit revolving à taux élevé, l'avalanche peut faire économiser beaucoup.</p>
+
+<h2>Questions fréquentes</h2>
+<details><summary>Faut-il épargner ou rembourser ses dettes d'abord ?</summary><p>Constituez d'abord une petite épargne de précaution (500 à 1 000 €) pour ne pas recréer de dette au moindre imprévu, puis attaquez les dettes à taux élevé.</p></details>
+<details><summary>Que faire si je n'arrive plus à payer ?</summary><p>Contactez vos créanciers rapidement pour négocier un échelonnement. En cas de surendettement, la Banque de France peut être saisie gratuitement : un dossier de surendettement permet de trouver des solutions.</p></details>
+</main>
+<footer><div class="wrap">
+  <p>Outils gratuits pour gérer son argent, sans inscription. Les résultats sont des estimations indicatives et ne constituent pas un conseil financier.</p>
+  <p>Certains liens peuvent être des liens affiliés : ils ne vous coûtent rien de plus et soutiennent le site. © 2026 BudgetMalin</p>
+</div></footer>
+<script src="assets/site.js"></script>
+<script>
+const box = document.getElementById("debts");
+function row(n, b, t, m) {
+  const d = document.createElement("div");
+  d.className = "row"; d.style.borderBottom = "1px solid var(--border)"; d.style.paddingBottom = "8px";
+  d.innerHTML = `<div><label>Dette</label><input class="n" value="${n}"></div>
+    <div><label>Capital restant (€)</label><input class="b" type="number" inputmode="decimal" value="${b}"></div>
+    <div><label>Taux annuel (%)</label><input class="t" type="number" inputmode="decimal" step="0.1" value="${t}"></div>
+    <div><label>Mensualité min. (€)</label><input class="m" type="number" inputmode="decimal" value="${m}"></div>`;
+  box.appendChild(d);
+  d.querySelectorAll("input").forEach(e => e.addEventListener("input", calc));
+}
+[["Carte revolving", 1800, 19, 60], ["Crédit auto", 7500, 5.9, 210], ["Crédit conso", 3200, 8.9, 110], ["Prêt familial", 600, 0, 50]].forEach(x => row(...x));
+document.getElementById("add").onclick = e => { e.preventDefault(); row("Nouvelle dette", 0, 0, 0); };
+const v = (el, c) => parseFloat(String(el.querySelector(c).value).replace(",", ".")) || 0;
+function sim(debts, extra, key) {
+  const order = debts.map((d, i) => i).sort(key);
+  let bal = debts.map(d => d.b), budget = debts.reduce((s, d) => s + d.m, 0) + extra, paid = 0, init = bal.reduce((a, b) => a + b, 0);
+  for (let m = 1; m <= 600; m++) {
+    const b = bal.map((x, i) => x * (1 + debts[i].t / 1200));
+    const pay = b.map((x, i) => Math.min(debts[i].m, x));
+    let ex = budget - pay.reduce((a, c) => a + c, 0);
+    for (const i of order) { const add = Math.min(b[i] - pay[i], Math.max(ex, 0)); pay[i] += add; ex -= add; }
+    bal = b.map((x, i) => x - pay[i] < 0.005 ? 0 : x - pay[i]);
+    paid += pay.reduce((a, c) => a + c, 0);
+    if (bal.every(x => x === 0)) return { m, i: paid - init };
+  }
+  return null;
+}
+const dur = m => { if (!m) return "jamais ⚠️"; const a = Math.floor(m / 12), r = m % 12; return (a ? a + " an" + (a > 1 ? "s" : "") + (r ? " " : "") : "") + (r ? r + " mois" : ""); };
+function calc() {
+  const debts = [...box.children].map(d => ({ b: v(d, ".b"), t: v(d, ".t"), m: v(d, ".m") })).filter(d => d.b > 0);
+  const extra = num("extra");
+  const s = sim(debts, extra, (x, y) => debts[x].b - debts[y].b), a = sim(debts, extra, (x, y) => debts[y].t - debts[x].t), base = sim(debts, 0, (x, y) => debts[y].t - debts[x].t);
+  document.getElementById("s-m").textContent = dur(s && s.m);
+  document.getElementById("a-m").textContent = dur(a && a.m);
+  document.getElementById("s-i").textContent = s ? eur(s.i) : "–";
+  document.getElementById("a-i").textContent = a ? eur(a.i) : "–";
+  document.getElementById("base").textContent = base ? dur(base.m) + ", " + eur(base.i) + " d'intérêts" : "jamais : les mensualités ne couvrent pas les intérêts";
+  document.getElementById("msg").textContent = s && a ? (a.i < s.i - 1 ? `💡 L'avalanche vous fait économiser ${eur(s.i - a.i)} d'intérêts.` : "💡 Les deux méthodes se valent : prenez la boule de neige pour la motivation.") : "⚠️ Augmentez l'effort mensuel : certaines dettes ne diminuent pas.";
+}
+document.getElementById("extra").addEventListener("input", calc);
+calc();
+</script>
+
+</body>
+</html>
