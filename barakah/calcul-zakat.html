@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Calcul zakat al-mal 2027 – Calculateur gratuit (nisab or et argent) | Barakah Budget</title>
-<meta name="description" content="Calculez votre zakat al-mal gratuitement : épargne, or, argent, actions, marchandises, créances et dettes. Nisab or ou argent, année lunaire ou solaire, purification des intérêts.">
+<meta name="description" content="Calculez votre zakat al-mal gratuitement : épargne, or, argent, actions, marchandises, créances et dettes. Nisab or ou argent, année lunaire ou solaire, cours de l'or et de l'argent du jour.">
 <link rel="canonical" href="https://flexbhk.github.io/budgetmalin/barakah/calcul-zakat.html">
 <link rel="alternate" hreflang="fr" href="https://flexbhk.github.io/budgetmalin/barakah/calcul-zakat.html">
 <link rel="alternate" hreflang="en" href="https://flexbhk.github.io/budgetmalin/barakah/en/zakat-calculator.html">
 <meta property="og:title" content="Calcul zakat al-mal 2027 – Calculateur gratuit (nisab or et argent) | Barakah Budget">
-<meta property="og:description" content="Calculez votre zakat al-mal gratuitement : épargne, or, argent, actions, marchandises, créances et dettes. Nisab or ou argent, année lunaire ou solaire, purification des intérêts.">
+<meta property="og:description" content="Calculez votre zakat al-mal gratuitement : épargne, or, argent, actions, marchandises, créances et dettes. Nisab or ou argent, année lunaire ou solaire, cours de l'or et de l'argent du jour.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://flexbhk.github.io/budgetmalin/barakah/calcul-zakat.html">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
@@ -29,10 +29,10 @@
 <div class="card">
   <h2 style="margin-top:0;font-size:1.1rem">1. Cours du jour</h2>
   <div class="row">
-    <div><label for="or">Cours de l'or (€/gramme)</label><input id="or" type="number" inputmode="decimal" value="110" step="0.01"></div>
-    <div><label for="ag">Cours de l'argent (€/gramme)</label><input id="ag" type="number" inputmode="decimal" value="1.3" step="0.01"></div>
+    <div><label for="or">Cours de l'or (€/gramme)</label><input id="or" type="number" inputmode="decimal" value="140" step="0.01"></div>
+    <div><label for="ag">Cours de l'argent (€/gramme)</label><input id="ag" type="number" inputmode="decimal" value="1.40" step="0.01"></div>
   </div>
-  <p class="note">⚠️ Valeurs d'exemple : remplacez-les par le cours du jour où vous calculez votre zakat (cours de l'or et de l'argent au gramme, en euros).</p>
+  <p class="note" id="cours-note">Valeurs indicatives : elles sont remplacées automatiquement par le cours du jour dès son chargement. Vous pouvez aussi les modifier.</p>
   <div class="row">
     <div><label for="ref">Nisab de référence</label><select id="ref"><option value="or">Or (85 g)</option><option value="ag">Argent (595 g)</option></select></div>
     <div><label for="an">Calendrier</label><select id="an"><option value="0.025">Année lunaire (2,5 %)</option><option value="0.02577">Année solaire (2,577 %)</option></select></div>
@@ -41,11 +41,11 @@
   <h2 style="font-size:1.1rem">2. Vos biens (en €)</h2>
   <div class="row">
     <div><label for="liq">Comptes courants et espèces</label><input id="liq" type="number" inputmode="decimal" value="3000"></div>
-    <div><label for="epa">Épargne et livrets (hors intérêts)</label><input id="epa" type="number" inputmode="decimal" value="8000"></div>
+    <div><label for="epa">Épargne disponible</label><input id="epa" type="number" inputmode="decimal" value="8000"></div>
   </div>
   <div class="row">
     <div><label for="vor">Or et argent détenus (valeur)</label><input id="vor" type="number" inputmode="decimal" value="0"></div>
-    <div><label for="act">Actions, fonds, assurance-vie (part zakatable)</label><input id="act" type="number" inputmode="decimal" value="0"></div>
+    <div><label for="act">Actions et fonds (part zakatable)</label><input id="act" type="number" inputmode="decimal" value="0"></div>
   </div>
   <div class="row">
     <div><label for="mar">Marchandises destinées à la vente</label><input id="mar" type="number" inputmode="decimal" value="0"></div>
@@ -55,7 +55,6 @@
   <h2 style="font-size:1.1rem">3. À déduire</h2>
   <div class="row">
     <div><label for="det">Dettes exigibles à court terme</label><input id="det" type="number" inputmode="decimal" value="0"></div>
-    <div><label for="rib">Intérêts perçus dans l'année (riba)</label><input id="rib" type="number" inputmode="decimal" value="0"></div>
   </div>
 
   <div class="result">
@@ -67,7 +66,6 @@
       <tr><td>Dettes déduites</td><td id="r-d">–</td></tr>
       <tr><td>Assiette de la zakat</td><td id="r-a">–</td></tr>
       <tr><td>Nisab</td><td id="r-n">–</td></tr>
-      <tr><td>Intérêts à purifier (à donner, hors zakat)</td><td id="r-p">–</td></tr>
     </table>
   </div>
 </div>
@@ -75,7 +73,7 @@
 
 <div class="cta">
   <h3>🌙 Le Tableur Zakat & Sadaqa</h3>
-  <p>Calculez votre zakat chaque année en quelques minutes, suivez vos dons et la purification des intérêts. Compatible Excel, Google Sheets et LibreOffice. Seulement <strong class="prix-produit" data-product="zakat"></strong>, téléchargement immédiat.</p>
+  <p>Calculez votre zakat chaque année en quelques minutes, suivez vos dons et gardez l'historique de vos zakats. Compatible Excel, Google Sheets et LibreOffice. Seulement <strong class="prix-produit" data-product="zakat"></strong>, téléchargement immédiat.</p>
   <a class="btn cta-produit" data-product="zakat" href="#">Télécharger →</a>
 </div>
 
@@ -85,13 +83,9 @@
 <h2>Nisab or ou argent ?</h2>
 <p>Le nisab correspond à la valeur de <strong>85 grammes d'or</strong> ou de <strong>595 grammes d'argent</strong>. Le nisab argent étant beaucoup plus bas, il rend plus de personnes redevables : de nombreux savants le recommandent pour l'argent liquide, par précaution et dans l'intérêt des pauvres. D'autres retiennent l'or. Notre calculateur vous laisse choisir.</p>
 
-<h2>Que faire des intérêts bancaires ?</h2>
-<p>Les intérêts (riba) perçus sur un livret ou un compte rémunéré ne font pas partie de votre patrimoine licite. Ils ne sont pas soumis à la zakat : on les retire et on les donne intégralement à des œuvres d'utilité générale. C'est la <strong>purification</strong>.</p>
-
 <h2>Questions fréquentes</h2>
 <details><summary>La résidence principale et la voiture sont-elles soumises à la zakat ?</summary><p>Non. Les biens à usage personnel (logement, voiture, meubles, vêtements) ne sont pas soumis à la zakat. Un bien immobilier acheté pour être revendu, en revanche, est considéré comme une marchandise.</p></details>
 <details><summary>Comment compter les actions ?</summary><p>Si vous achetez et revendez régulièrement, comptez la valeur de marché totale. Pour un placement de long terme, de nombreux savants retiennent seulement la part zakatable des actifs de l'entreprise (souvent estimée à environ 25 à 30 % de la valeur). Les avis divergent : renseignez-vous auprès d'un savant.</p></details>
-<details><summary>Et l'épargne retraite bloquée (PER, épargne salariale) ?</summary><p>Plusieurs avis existent : zakat chaque année sur la valeur de rachat nette, ou zakat seulement au moment où l'argent devient disponible. Choisissez l'avis que vous suivez et restez constant.</p></details>
 <details><summary>À qui verser la zakat ?</summary><p>Le Coran (sourate 9, verset 60) cite huit catégories de bénéficiaires, dont les pauvres et les nécessiteux. Vous pouvez la verser directement ou via une association reconnue.</p></details>
 </main>
 <footer><div class="wrap">
@@ -100,7 +94,7 @@
 </div></footer>
 <script src="../assets/site.js"></script>
 <script>
-bindAll(() => {
+const calc = () => {
   const nisab = document.getElementById("ref").value === "or" ? 85 * num("or") : 595 * num("ag");
   const taux = parseFloat(document.getElementById("an").value);
   const total = ["liq", "epa", "vor", "act", "mar", "cre"].reduce((s, k) => s + num(k), 0);
@@ -111,8 +105,9 @@ bindAll(() => {
   document.getElementById("r-d").textContent = "− " + eur(det);
   document.getElementById("r-a").textContent = eur(assiette);
   document.getElementById("r-n").textContent = eur(nisab);
-  document.getElementById("r-p").textContent = eur(num("rib"), 2);
-});
+};
+bindAll(calc);
+brancherCours(calc, "fr");
 </script>
 
 </body>

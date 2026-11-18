@@ -33,3 +33,43 @@ function bindAll(fn) { document.querySelectorAll("input,select").forEach(el => e
 
 // Formatage multi-devises pour les pages en anglais
 const money = (n, cur, d = 2) => { try { return (isFinite(n) ? n : 0).toLocaleString("en-US", { style: "currency", currency: cur, maximumFractionDigits: d, minimumFractionDigits: d }); } catch (e) { return (n || 0).toFixed(d) + " " + cur; } };
+
+// Cours de l'or et de l'argent, mis à jour chaque jour par une tâche automatique GitHub (fichier prix.json)
+const COURS_URLS = [
+  "https://raw.githubusercontent.com/flexbhk/budgetmalin/main/prix.json",
+  "/budgetmalin/prix.json",
+];
+async function chargerCours() {
+  for (const u of COURS_URLS) {
+    try {
+      const r = await fetch(u, { cache: "no-store" });
+      if (!r.ok) continue;
+      const j = await r.json();
+      if (j.or_usd_g > 0 && j.argent_usd_g > 0 && j.taux && j.date) return j;
+    } catch (e) { /* source suivante */ }
+  }
+  return null;
+}
+function brancherCours(calc, langue) {
+  const or = document.getElementById("or"), ag = document.getElementById("ag"), note = document.getElementById("cours-note");
+  const cur = document.getElementById("cur");
+  if (!or || !ag) return;
+  let manuel = false;
+  [or, ag].forEach(e => e.addEventListener("input", () => { manuel = true; }));
+  chargerCours().then(j => {
+    if (!j) return;
+    const appliquer = () => {
+      const t = j.taux[cur ? cur.value : "EUR"];
+      if (manuel || !t) return;
+      or.value = (j.or_usd_g * t).toFixed(2);
+      ag.value = (j.argent_usd_g * t).toFixed(2);
+      calc();
+    };
+    appliquer();
+    if (cur) cur.addEventListener("input", appliquer);
+    const d = new Date(j.date + "T12:00:00Z").toLocaleDateString(langue === "fr" ? "fr-FR" : "en-GB", { day: "numeric", month: "long", year: "numeric" });
+    if (note) note.textContent = langue === "fr"
+      ? `✅ Cours du ${d}, mis à jour automatiquement chaque jour. Vous pouvez les modifier.`
+      : `✅ Prices as of ${d}, updated automatically every day. You can edit them.`;
+  });
+}
