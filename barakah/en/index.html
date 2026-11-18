@@ -13,29 +13,49 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://flexbhk.github.io/budgetmalin/barakah/en/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="../../assets/style.css">
 </head>
-<body>
-<header><div class="wrap nav">
-  <a class="logo" href="./">Barakah<span>Budget</span></a>
-  <a class="l" href="zakat-calculator.html">Zakat calculator</a>
-  <a class="l" href="zakat-al-fitr-calculator.html">Zakat al-Fitr</a>
+<body class="bk">
+<header><div class="nav">
+  <a class="logo" href="./"><span class="ico">🌙</span><span class="nm">Barakah<span>Budget</span></span></a>
+  <nav class="links"><a class="l" href="zakat-calculator.html">Zakat calculator</a><a class="l" href="zakat-al-fitr-calculator.html">Zakat al-Fitr</a></nav>
   <a class="lang" href="../" hreflang="fr" lang="fr">🌐 Français</a>
 </div></header>
+<section class="hero"><div class="wrap"><div>
+  <span class="pill">🌙 Islamic finance · free</span>
+  <h1>Calculate your zakat with peace of mind</h1>
+  <p class="sub">Simple, reliable tools for zakat al-mal, zakat al-Fitr and Ramadan planning, with gold and silver prices updated every day, in your currency.</p>
+  <div class="btns"><a class="btn" href="zakat-calculator.html">Calculate my zakat →</a><a class="btn ghost lien-produits" href="#produits">Our spreadsheets</a></div>
+  <div class="trust"><span>Free</span><span>No sign-up</span><span>Live gold &amp; silver prices</span></div>
+</div>
+<div class="visuel">
+  <div class="vcard main"><small>Zakat al-mal calculation</small>
+    <div class="vrow"><span>Cash &amp; savings</span><b>£11,000</b></div><div class="vrow"><span>Gold &amp; shares</span><b>£3,700</b></div><div class="vrow"><span>Debts deducted</span><b>− £1,000</b></div>
+    <small style="margin-top:14px">Zakat due</small><div class="big">£342.50</div></div>
+  <div class="vcard chip"><em>✨</em><div><small>Gold &amp; silver prices</small><b>updated daily</b></div></div>
+</div></div></section>
 <main class="wrap">
-<h1>Barakah Budget: Islamic finance tools, free and simple</h1>
-<p class="lead">Manage your money in line with your faith: calculate your zakat, prepare for Ramadan and organise your giving. Works in any currency, no sign-up.</p>
+<h2 class="t" id="outils" style="margin-top:48px">Our tools</h2>
+<p class="t" style="color:var(--muted)">Free, in any currency, no sign-up.</p>
 
 <div class="grid">
-  <a class="tool" href="zakat-calculator.html"><strong>🌙 Zakat calculator</strong><span>Cash, savings, gold, shares, business stock and debts: your zakat in 2 minutes.</span></a>
-  <a class="tool" href="zakat-al-fitr-calculator.html"><strong>🤲 Zakat al-Fitr calculator</strong><span>The amount due for your whole household before Eid prayer.</span></a>
+  <a class="tool" href="zakat-calculator.html"><span class="ti">🌙</span><strong>Zakat calculator</strong><span>Cash, savings, gold, shares, business stock and debts: your zakat in 2 minutes.</span></a>
+  <a class="tool" href="zakat-al-fitr-calculator.html"><span class="ti">🤲</span><strong>Zakat al-Fitr calculator</strong><span>The amount due for your whole household before Eid prayer.</span></a>
 </div>
 
-
-<div class="cta">
-  <h3>🌙 Zakat & Sadaqah Spreadsheet</h3>
-  <p>Calculate your zakat every year in minutes, track your donations and keep a record of your zakat. Works with Excel, Google Sheets and LibreOffice. Only <strong class="prix-produit" data-product="zakat_en"></strong>, instant download.</p>
-  <a class="btn cta-produit" data-product="zakat_en" href="#">Download now →</a>
+<div class="section produits" id="produits">
+<h2 class="t">Our spreadsheets</h2>
+<p class="t">Calculate your zakat every year and prepare for Ramadan with peace of mind.</p>
+<div class="vitrine">
+  <div class="prod"><img src="../../assets/img/zakat_en.webp" alt="" loading="lazy" width="400" height="300"><div>
+    <b>Zakat & Sadaqah Spreadsheet</b><span class="prix prix-produit" data-product="zakat_en"></span>
+    <a class="btn cta-produit" data-product="zakat_en" href="#">Download now →</a></div></div>
+  <div class="prod"><img src="../../assets/img/ramadan_en.webp" alt="" loading="lazy" width="400" height="300"><div>
+    <b>Ramadan 2027 Budget Planner</b><span class="prix prix-produit" data-product="ramadan_en"></span>
+    <a class="btn cta-produit" data-product="ramadan_en" href="#">Download now →</a></div></div>
+</div>
 </div>
 
 <h2>The core principles of Islamic finance</h2>
@@ -49,14 +69,18 @@
 
 
 <div class="cta">
-  <h3>🌙 Ramadan 2027 Budget Planner</h3>
-  <p>Monthly budget, 30-day iftar planner, zakat al-Fitr and Eid gifts, all in one file. Works with Excel and Google Sheets. Only <strong class="prix-produit" data-product="ramadan_en"></strong>, instant download.</p>
-  <a class="btn cta-produit" data-product="ramadan_en" href="#">Download now →</a>
+  <img src="../../assets/img/ramadan_en.webp" alt="" loading="lazy" width="400" height="300">
+  <div>
+    <h3>🌙 Ramadan 2027 Budget Planner</h3>
+    <p>Monthly budget, 30-day iftar planner, zakat al-Fitr and Eid gifts, all in one file. Works with Excel and Google Sheets. Only <strong class="prix-produit" data-product="ramadan_en"></strong>, instant download.</p>
+    <a class="btn cta-produit" data-product="ramadan_en" href="#">Download now →</a>
+  </div>
 </div>
 
 <p class="note">These tools are educational. Scholars differ on several points (choice of nisab, which assets are zakatable…). If in doubt, consult a scholar you trust.</p>
 </main>
 <footer><div class="wrap">
+  <div class="logo"><span class="ico">🌙</span><span class="nm">Barakah<span>Budget</span></span></div>
   <p>Free Islamic personal finance tools, no sign-up required. Results are estimates for educational purposes and do not constitute financial or religious advice.</p>
   <p>© 2026 Barakah Budget</p>
 </div></footer>

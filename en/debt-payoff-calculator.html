@@ -13,22 +13,18 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://flexbhk.github.io/budgetmalin/en/debt-payoff-calculator.html">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💶</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
-<header><div class="wrap nav">
-  <a class="logo" href="./">Budget<span>Malin</span></a>
-  <a class="l" href="loan-calculator.html">Loan</a>
-  <a class="l" href="savings-calculator.html">Savings</a>
-  <a class="l" href="budget-50-30-20.html">50/30/20 Budget</a>
-  <a class="l" href="debt-payoff-calculator.html">Debt payoff</a>
-  <a class="l" href="52-week-savings-challenge.html">52-Week Challenge</a>
+<body class="bm">
+<header><div class="nav">
+  <a class="logo" href="./"><span class="ico">💶</span><span class="nm">Budget<span>Malin</span></span></a>
+  <nav class="links"><a class="l" href="loan-calculator.html">Loan</a><a class="l" href="savings-calculator.html">Savings</a><a class="l" href="budget-50-30-20.html">50/30/20 Budget</a><a class="l" href="debt-payoff-calculator.html">Debt payoff</a><a class="l" href="52-week-savings-challenge.html">52-Week Challenge</a></nav>
   <a class="lang" href="../rembourser-ses-dettes.html" hreflang="fr" lang="fr">🌐 Français</a>
 </div></header>
+<section class="band"><div class="wrap"><a class="crumb" href="./">← All tools</a><h1>Pay off your debt faster</h1><p>List your debts and your extra monthly payment: we compare the <strong>snowball</strong> and <strong>avalanche</strong> methods and work out your debt-free date.</p></div></section>
 <main class="wrap">
-<h1>Pay off your debt faster</h1>
-<p class="lead">List your debts and your extra monthly payment: we compare the <strong>snowball</strong> and <strong>avalanche</strong> methods and work out your debt-free date.</p>
-
 <div class="card">
   <label for="cur">Currency</label><select id="cur"><option value="USD">US Dollar ($)</option><option value="GBP">British Pound (£)</option><option value="EUR">Euro (€)</option><option value="CAD">Canadian Dollar</option><option value="AUD">Australian Dollar</option><option value="NZD">New Zealand Dollar</option><option value="SGD">Singapore Dollar</option><option value="INR">Indian Rupee</option><option value="ZAR">South African Rand</option><option value="AED">UAE Dirham</option></select>
   <div id="debts"></div>
@@ -48,9 +44,12 @@
 
 
 <div class="cta">
-  <h3>🎯 The Debt Payoff Planner</h3>
-  <p>List your debts: the spreadsheet compares snowball and avalanche, shows your debt-free date and payoff order. Works with Excel and Google Sheets. Only <strong class="prix-produit" data-product="dettes_en"></strong>, instant download.</p>
-  <a class="btn cta-produit" data-product="dettes_en" href="#">Download now →</a>
+  <img src="../assets/img/dettes_en.webp" alt="" loading="lazy" width="400" height="300">
+  <div>
+    <h3>🎯 The Debt Payoff Planner</h3>
+    <p>List your debts: the spreadsheet compares snowball and avalanche, shows your debt-free date and payoff order. Works with Excel and Google Sheets. Only <strong class="prix-produit" data-product="dettes_en"></strong>, instant download.</p>
+    <a class="btn cta-produit" data-product="dettes_en" href="#">Download now →</a>
+  </div>
 </div>
 
 <h2>The debt snowball method</h2>
@@ -67,6 +66,7 @@
 <details><summary>What if I can't keep up with payments?</summary><p>Contact your lenders early to ask about a payment plan. Free, independent debt advice services exist in most countries: look for a non-profit debt charity or credit counselling service near you.</p></details>
 </main>
 <footer><div class="wrap">
+  <div class="logo"><span class="ico">💶</span><span class="nm">Budget<span>Malin</span></span></div>
   <p>Free money tools, no sign-up required. Results are estimates for educational purposes and do not constitute financial advice.</p>
   <p>Some links may be affiliate links: they cost you nothing extra and support the site. © 2026 BudgetMalin</p>
 </div></footer>

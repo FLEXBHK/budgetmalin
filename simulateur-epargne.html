@@ -13,23 +13,18 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://flexbhk.github.io/budgetmalin/simulateur-epargne.html">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💶</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-<header><div class="wrap nav">
-  <a class="logo" href="./">Budget<span>Malin</span></a>
-  <a class="l" href="salaire-brut-net.html">Brut → Net</a>
-  <a class="l" href="simulateur-pret.html">Prêt</a>
-  <a class="l" href="simulateur-epargne.html">Épargne</a>
-  <a class="l" href="budget-50-30-20.html">Budget 50/30/20</a>
-  <a class="l" href="rembourser-ses-dettes.html">Dettes</a>
-  <a class="l" href="defi-52-semaines.html">Défi 52 semaines</a>
+<body class="bm">
+<header><div class="nav">
+  <a class="logo" href="./"><span class="ico">💶</span><span class="nm">Budget<span>Malin</span></span></a>
+  <nav class="links"><a class="l" href="salaire-brut-net.html">Brut → Net</a><a class="l" href="simulateur-pret.html">Prêt</a><a class="l" href="simulateur-epargne.html">Épargne</a><a class="l" href="budget-50-30-20.html">Budget 50/30/20</a><a class="l" href="rembourser-ses-dettes.html">Dettes</a><a class="l" href="defi-52-semaines.html">Défi 52 semaines</a></nav>
   <a class="lang" href="en/savings-calculator.html" hreflang="en" lang="en">🌐 English</a>
 </div></header>
+<section class="band"><div class="wrap"><a class="crumb" href="./">← Tous les outils</a><h1>Simulateur d'épargne</h1><p>Combien aurez-vous dans 5, 10 ou 20 ans en mettant un peu de côté chaque mois ? Découvrez la puissance des intérêts composés.</p></div></section>
 <main class="wrap">
-<h1>Simulateur d'épargne</h1>
-<p class="lead">Combien aurez-vous dans 5, 10 ou 20 ans en mettant un peu de côté chaque mois ? Découvrez la puissance des intérêts composés.</p>
-
 <div class="card">
   <div class="row">
     <div><label for="initial">Capital de départ (€)</label><input id="initial" type="number" inputmode="decimal" value="1000"></div>
@@ -55,9 +50,12 @@
 
 
 <div class="cta">
-  <h3>📊 Le Tableur Budget Annuel 2027</h3>
-  <p>12 mois prêts à remplir, catégories automatiques, bilan annuel et graphiques. Compatible Excel, Google Sheets et LibreOffice. Seulement <strong class="prix-produit" data-product="budget"></strong>, téléchargement immédiat.</p>
-  <a class="btn cta-produit" data-product="budget" href="#">Télécharger →</a>
+  <img src="assets/img/budget.webp" alt="" loading="lazy" width="400" height="300">
+  <div>
+    <h3>📊 Le Tableur Budget Annuel 2027</h3>
+    <p>12 mois prêts à remplir, catégories automatiques, bilan annuel et graphiques. Compatible Excel, Google Sheets et LibreOffice. Seulement <strong class="prix-produit" data-product="budget"></strong>, téléchargement immédiat.</p>
+    <a class="btn cta-produit" data-product="budget" href="#">Télécharger →</a>
+  </div>
 </div>
 
 <h2>Les intérêts composés, c'est quoi ?</h2>
@@ -72,6 +70,7 @@
 <details><summary>Faut-il mettre en place un virement automatique ?</summary><p>Oui : programmer un virement vers votre épargne le jour de la paie est la méthode la plus efficace pour épargner sans y penser.</p></details>
 </main>
 <footer><div class="wrap">
+  <div class="logo"><span class="ico">💶</span><span class="nm">Budget<span>Malin</span></span></div>
   <p>Outils gratuits pour gérer son argent, sans inscription. Les résultats sont des estimations indicatives et ne constituent pas un conseil financier.</p>
   <p>Certains liens peuvent être des liens affiliés : ils ne vous coûtent rien de plus et soutiennent le site. © 2026 BudgetMalin</p>
 </div></footer>

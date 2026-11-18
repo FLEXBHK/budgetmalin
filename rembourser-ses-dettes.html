@@ -13,23 +13,18 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://flexbhk.github.io/budgetmalin/rembourser-ses-dettes.html">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💶</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-<header><div class="wrap nav">
-  <a class="logo" href="./">Budget<span>Malin</span></a>
-  <a class="l" href="salaire-brut-net.html">Brut → Net</a>
-  <a class="l" href="simulateur-pret.html">Prêt</a>
-  <a class="l" href="simulateur-epargne.html">Épargne</a>
-  <a class="l" href="budget-50-30-20.html">Budget 50/30/20</a>
-  <a class="l" href="rembourser-ses-dettes.html">Dettes</a>
-  <a class="l" href="defi-52-semaines.html">Défi 52 semaines</a>
+<body class="bm">
+<header><div class="nav">
+  <a class="logo" href="./"><span class="ico">💶</span><span class="nm">Budget<span>Malin</span></span></a>
+  <nav class="links"><a class="l" href="salaire-brut-net.html">Brut → Net</a><a class="l" href="simulateur-pret.html">Prêt</a><a class="l" href="simulateur-epargne.html">Épargne</a><a class="l" href="budget-50-30-20.html">Budget 50/30/20</a><a class="l" href="rembourser-ses-dettes.html">Dettes</a><a class="l" href="defi-52-semaines.html">Défi 52 semaines</a></nav>
   <a class="lang" href="en/debt-payoff-calculator.html" hreflang="en" lang="en">🌐 English</a>
 </div></header>
+<section class="band"><div class="wrap"><a class="crumb" href="./">← Tous les outils</a><h1>Rembourser ses dettes plus vite</h1><p>Listez vos crédits et votre effort mensuel : on compare la méthode <strong>boule de neige</strong> et la méthode <strong>avalanche</strong> et on calcule votre date de libération.</p></div></section>
 <main class="wrap">
-<h1>Rembourser ses dettes plus vite</h1>
-<p class="lead">Listez vos crédits et votre effort mensuel : on compare la méthode <strong>boule de neige</strong> et la méthode <strong>avalanche</strong> et on calcule votre date de libération.</p>
-
 <div class="card">
   <div id="debts"></div>
   <p><a href="#" id="add">+ Ajouter une dette</a></p>
@@ -48,9 +43,12 @@
 
 
 <div class="cta">
-  <h3>🎯 Le Plan Sortir des dettes</h3>
-  <p>Listez vos crédits : le tableur compare boule de neige et avalanche, calcule votre date de libération et l'ordre de remboursement. Compatible Excel et Google Sheets. Seulement <strong class="prix-produit" data-product="dettes"></strong>, téléchargement immédiat.</p>
-  <a class="btn cta-produit" data-product="dettes" href="#">Télécharger →</a>
+  <img src="assets/img/dettes.webp" alt="" loading="lazy" width="400" height="300">
+  <div>
+    <h3>🎯 Le Plan Sortir des dettes</h3>
+    <p>Listez vos crédits : le tableur compare boule de neige et avalanche, calcule votre date de libération et l'ordre de remboursement. Compatible Excel et Google Sheets. Seulement <strong class="prix-produit" data-product="dettes"></strong>, téléchargement immédiat.</p>
+    <a class="btn cta-produit" data-product="dettes" href="#">Télécharger →</a>
+  </div>
 </div>
 
 <h2>La méthode boule de neige</h2>
@@ -67,6 +65,7 @@
 <details><summary>Que faire si je n'arrive plus à payer ?</summary><p>Contactez vos créanciers rapidement pour négocier un échelonnement. En cas de surendettement, la Banque de France peut être saisie gratuitement : un dossier de surendettement permet de trouver des solutions.</p></details>
 </main>
 <footer><div class="wrap">
+  <div class="logo"><span class="ico">💶</span><span class="nm">Budget<span>Malin</span></span></div>
   <p>Outils gratuits pour gérer son argent, sans inscription. Les résultats sont des estimations indicatives et ne constituent pas un conseil financier.</p>
   <p>Certains liens peuvent être des liens affiliés : ils ne vous coûtent rien de plus et soutiennent le site. © 2026 BudgetMalin</p>
 </div></footer>

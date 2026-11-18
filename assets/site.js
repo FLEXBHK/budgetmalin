@@ -22,10 +22,17 @@ const PRODUCTS = {
 const pret = p => p && !/VOTRE-LIEN|YOUR-LINK/.test(p.url);
 document.querySelectorAll(".cta-produit").forEach(a => {
   const p = PRODUCTS[a.dataset.product || "budget"];
-  if (!pret(p)) { const bloc = a.closest(".cta"); if (bloc) bloc.style.display = "none"; return; }
+  if (!pret(p)) { const bloc = a.closest(".cta, .prod"); if (bloc) bloc.style.display = "none"; return; }
   a.href = p.url; a.target = "_blank"; a.rel = "noopener";
 });
-document.querySelectorAll(".prix-produit").forEach(e => { e.textContent = PRODUCTS[e.dataset.product || "budget"].price; });
+// Vitrine : masquée tant qu'aucun produit n'est en vente (ainsi que les liens qui y mènent)
+document.querySelectorAll(".section.produits").forEach(s => {
+  if ([...s.querySelectorAll(".prod")].every(x => x.style.display === "none")) {
+    s.style.display = "none";
+    document.querySelectorAll(".lien-produits").forEach(l => { l.style.display = "none"; });
+  }
+});
+document.querySelectorAll(".prix-produit").forEach(e => { const p = PRODUCTS[e.dataset.product || "budget"]; if (p) e.textContent = p.price; });
 
 const eur = (n, d = 0) => (isFinite(n) ? n : 0).toLocaleString("fr-FR", { style: "currency", currency: "EUR", maximumFractionDigits: d, minimumFractionDigits: d });
 const num = id => parseFloat(String(document.getElementById(id).value).replace(",", ".")) || 0;

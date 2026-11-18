@@ -13,23 +13,18 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://flexbhk.github.io/budgetmalin/simulateur-pret.html">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💶</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-<header><div class="wrap nav">
-  <a class="logo" href="./">Budget<span>Malin</span></a>
-  <a class="l" href="salaire-brut-net.html">Brut → Net</a>
-  <a class="l" href="simulateur-pret.html">Prêt</a>
-  <a class="l" href="simulateur-epargne.html">Épargne</a>
-  <a class="l" href="budget-50-30-20.html">Budget 50/30/20</a>
-  <a class="l" href="rembourser-ses-dettes.html">Dettes</a>
-  <a class="l" href="defi-52-semaines.html">Défi 52 semaines</a>
+<body class="bm">
+<header><div class="nav">
+  <a class="logo" href="./"><span class="ico">💶</span><span class="nm">Budget<span>Malin</span></span></a>
+  <nav class="links"><a class="l" href="salaire-brut-net.html">Brut → Net</a><a class="l" href="simulateur-pret.html">Prêt</a><a class="l" href="simulateur-epargne.html">Épargne</a><a class="l" href="budget-50-30-20.html">Budget 50/30/20</a><a class="l" href="rembourser-ses-dettes.html">Dettes</a><a class="l" href="defi-52-semaines.html">Défi 52 semaines</a></nav>
   <a class="lang" href="en/loan-calculator.html" hreflang="en" lang="en">🌐 English</a>
 </div></header>
+<section class="band"><div class="wrap"><a class="crumb" href="./">← Tous les outils</a><h1>Simulateur de prêt</h1><p>Mensualité, coût total et taux d'endettement : sachez exactement ce que votre crédit va vous coûter.</p></div></section>
 <main class="wrap">
-<h1>Simulateur de prêt</h1>
-<p class="lead">Mensualité, coût total et taux d'endettement : sachez exactement ce que votre crédit va vous coûter.</p>
-
 <div class="card">
   <div class="row">
     <div><label for="montant">Montant emprunté (€)</label><input id="montant" type="number" inputmode="decimal" value="200000"></div>
@@ -58,9 +53,12 @@
 
 
 <div class="cta">
-  <h3>📊 Le Tableur Budget Annuel 2027</h3>
-  <p>12 mois prêts à remplir, catégories automatiques, bilan annuel et graphiques. Compatible Excel, Google Sheets et LibreOffice. Seulement <strong class="prix-produit" data-product="budget"></strong>, téléchargement immédiat.</p>
-  <a class="btn cta-produit" data-product="budget" href="#">Télécharger →</a>
+  <img src="assets/img/budget.webp" alt="" loading="lazy" width="400" height="300">
+  <div>
+    <h3>📊 Le Tableur Budget Annuel 2027</h3>
+    <p>12 mois prêts à remplir, catégories automatiques, bilan annuel et graphiques. Compatible Excel, Google Sheets et LibreOffice. Seulement <strong class="prix-produit" data-product="budget"></strong>, téléchargement immédiat.</p>
+    <a class="btn cta-produit" data-product="budget" href="#">Télécharger →</a>
+  </div>
 </div>
 
 <h2>Comment est calculée la mensualité ?</h2>
@@ -75,6 +73,7 @@
 <details><summary>Quel apport faut-il ?</summary><p>Les banques demandent en général un apport d'au moins 10 % du prix, pour couvrir les frais de notaire et de garantie.</p></details>
 </main>
 <footer><div class="wrap">
+  <div class="logo"><span class="ico">💶</span><span class="nm">Budget<span>Malin</span></span></div>
   <p>Outils gratuits pour gérer son argent, sans inscription. Les résultats sont des estimations indicatives et ne constituent pas un conseil financier.</p>
   <p>Certains liens peuvent être des liens affiliés : ils ne vous coûtent rien de plus et soutiennent le site. © 2026 BudgetMalin</p>
 </div></footer>
