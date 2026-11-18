@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Debt Payoff Calculator – Snowball vs Avalanche (Free, Any Currency)</title>
+<meta name="description" content="Compare the debt snowball and debt avalanche methods: your debt-free date, total interest paid and payoff order. Free calculator for credit cards, car loans and personal loans.">
+<link rel="canonical" href="https://flexbhk.github.io/budgetmalin/en/debt-payoff-calculator.html">
+<link rel="alternate" hreflang="en" href="https://flexbhk.github.io/budgetmalin/en/debt-payoff-calculator.html">
+<link rel="alternate" hreflang="fr" href="https://flexbhk.github.io/budgetmalin/rembourser-ses-dettes.html">
+<meta property="og:title" content="Debt Payoff Calculator – Snowball vs Avalanche (Free, Any Currency)">
+<meta property="og:description" content="Compare the debt snowball and debt avalanche methods: your debt-free date, total interest paid and payoff order. Free calculator for credit cards, car loans and personal loans.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://flexbhk.github.io/budgetmalin/en/debt-payoff-calculator.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💶</text></svg>">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="./">Budget<span>Malin</span></a>
+  <a class="l" href="loan-calculator.html">Loan</a>
+  <a class="l" href="savings-calculator.html">Savings</a>
+  <a class="l" href="budget-50-30-20.html">50/30/20 Budget</a>
+  <a class="l" href="debt-payoff-calculator.html">Debt payoff</a>
+  <a class="l" href="52-week-savings-challenge.html">52-Week Challenge</a>
+  <a class="lang" href="../rembourser-ses-dettes.html" hreflang="fr" lang="fr">🌐 Français</a>
+</div></header>
+<main class="wrap">
+<h1>Pay off your debt faster</h1>
+<p class="lead">List your debts and your extra monthly payment: we compare the <strong>snowball</strong> and <strong>avalanche</strong> methods and work out your debt-free date.</p>
+
+<div class="card">
+  <label for="cur">Currency</label><select id="cur"><option value="USD">US Dollar ($)</option><option value="GBP">British Pound (£)</option><option value="EUR">Euro (€)</option><option value="CAD">Canadian Dollar</option><option value="AUD">Australian Dollar</option><option value="NZD">New Zealand Dollar</option><option value="SGD">Singapore Dollar</option><option value="INR">Indian Rupee</option><option value="ZAR">South African Rand</option><option value="AED">UAE Dirham</option></select>
+  <div id="debts"></div>
+  <p><a href="#" id="add">+ Add a debt</a></p>
+  <label for="extra">Extra payment each month</label>
+  <input id="extra" type="number" inputmode="decimal" value="100">
+  <div class="result">
+    <table>
+      <tr><td></td><td>Snowball</td><td>Avalanche</td></tr>
+      <tr><td>Debt-free in</td><td id="s-m">–</td><td id="a-m">–</td></tr>
+      <tr><td>Interest paid</td><td id="s-i">–</td><td id="a-i">–</td></tr>
+      <tr><td>With minimum payments only</td><td colspan="2" id="base">–</td></tr>
+    </table>
+    <p id="msg" style="margin:10px 0 0"></p>
+  </div>
+</div>
+
+
+<div class="cta">
+  <h3>🎯 The Debt Payoff Planner</h3>
+  <p>List your debts: the spreadsheet compares snowball and avalanche, shows your debt-free date and payoff order. Works with Excel and Google Sheets. Only <strong class="prix-produit" data-product="dettes_en"></strong>, instant download.</p>
+  <a class="btn cta-produit" data-product="dettes_en" href="#">Download now →</a>
+</div>
+
+<h2>The debt snowball method</h2>
+<p>Pay the minimum on every debt and put all your extra money on the <strong>smallest balance</strong>. Once it is paid off, its payment rolls into the next debt: the "snowball" grows. Quick wins come early, which helps enormously to stay on track.</p>
+
+<h2>The debt avalanche method</h2>
+<p>Same principle, but you target the debt with the <strong>highest interest rate</strong> first (often a credit card). Mathematically, it is the cheapest method.</p>
+
+<h2>Which one should I choose?</h2>
+<p>If the difference in interest is small, choose the snowball: motivation matters more than a few dollars. If you have a high-rate credit card, the avalanche can save a lot.</p>
+
+<h2>Frequently asked questions</h2>
+<details><summary>Should I save or pay off debt first?</summary><p>Build a small emergency fund first (around one month of expenses) so a surprise bill doesn't push you back into debt, then attack high-interest debt.</p></details>
+<details><summary>What if I can't keep up with payments?</summary><p>Contact your lenders early to ask about a payment plan. Free, independent debt advice services exist in most countries: look for a non-profit debt charity or credit counselling service near you.</p></details>
+</main>
+<footer><div class="wrap">
+  <p>Free money tools, no sign-up required. Results are estimates for educational purposes and do not constitute financial advice.</p>
+  <p>Some links may be affiliate links: they cost you nothing extra and support the site. © 2026 BudgetMalin</p>
+</div></footer>
+<script src="../assets/site.js"></script>
+<script>
+const box = document.getElementById("debts");
+function row(n, b, t, m) {
+  const d = document.createElement("div");
+  d.className = "row"; d.style.borderBottom = "1px solid var(--border)"; d.style.paddingBottom = "8px";
+  d.innerHTML = `<div><label>Debt</label><input class="n" value="${n}"></div>
+    <div><label>Balance</label><input class="b" type="number" inputmode="decimal" value="${b}"></div>
+    <div><label>Interest rate (%)</label><input class="t" type="number" inputmode="decimal" step="0.1" value="${t}"></div>
+    <div><label>Minimum payment</label><input class="m" type="number" inputmode="decimal" value="${m}"></div>`;
+  box.appendChild(d);
+  d.querySelectorAll("input").forEach(e => e.addEventListener("input", calc));
+}
+[["Credit card", 1800, 19, 60], ["Car loan", 7500, 5.9, 210], ["Personal loan", 3200, 8.9, 110], ["Family loan", 600, 0, 50]].forEach(x => row(...x));
+document.getElementById("add").onclick = e => { e.preventDefault(); row("New debt", 0, 0, 0); };
+const v = (el, c) => parseFloat(String(el.querySelector(c).value).replace(",", ".")) || 0;
+function sim(debts, extra, key) {
+  const order = debts.map((d, i) => i).sort(key);
+  let bal = debts.map(d => d.b), budget = debts.reduce((s, d) => s + d.m, 0) + extra, paid = 0, init = bal.reduce((a, b) => a + b, 0);
+  for (let m = 1; m <= 600; m++) {
+    const b = bal.map((x, i) => x * (1 + debts[i].t / 1200));
+    const pay = b.map((x, i) => Math.min(debts[i].m, x));
+    let ex = budget - pay.reduce((a, c) => a + c, 0);
+    for (const i of order) { const add = Math.min(b[i] - pay[i], Math.max(ex, 0)); pay[i] += add; ex -= add; }
+    bal = b.map((x, i) => x - pay[i] < 0.005 ? 0 : x - pay[i]);
+    paid += pay.reduce((a, c) => a + c, 0);
+    if (bal.every(x => x === 0)) return { m, i: paid - init };
+  }
+  return null;
+}
+const dur = m => { if (!m) return "never ⚠️"; const a = Math.floor(m / 12), r = m % 12; return (a ? a + " year" + (a > 1 ? "s" : "") + (r ? " " : "") : "") + (r ? r + " month" + (r > 1 ? "s" : "") : ""); };
+function calc() {
+  const c = document.getElementById("cur").value, m0 = n => money(n, c, 0);
+  const debts = [...box.children].map(d => ({ b: v(d, ".b"), t: v(d, ".t"), m: v(d, ".m") })).filter(d => d.b > 0);
+  const extra = num("extra");
+  const s = sim(debts, extra, (x, y) => debts[x].b - debts[y].b), a = sim(debts, extra, (x, y) => debts[y].t - debts[x].t), base = sim(debts, 0, (x, y) => debts[y].t - debts[x].t);
+  document.getElementById("s-m").textContent = dur(s && s.m);
+  document.getElementById("a-m").textContent = dur(a && a.m);
+  document.getElementById("s-i").textContent = s ? m0(s.i) : "–";
+  document.getElementById("a-i").textContent = a ? m0(a.i) : "–";
+  document.getElementById("base").textContent = base ? dur(base.m) + ", " + m0(base.i) + " in interest" : "never: minimum payments don't cover the interest";
+  document.getElementById("msg").textContent = s && a ? (a.i < s.i - 1 ? `💡 The avalanche saves you ${m0(s.i - a.i)} in interest.` : "💡 Both methods are equal: pick the snowball for motivation.") : "⚠️ Increase your extra payment: some debts are not going down.";
+}
+document.getElementById("extra").addEventListener("input", calc);
+document.getElementById("cur").addEventListener("input", calc);
+calc();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zakat Calculator 2027 – Free, Gold & Silver Nisab, Any Currency | Barakah Budget</title>
+<meta name="description" content="Calculate your zakat al-mal for free: cash, savings, gold, silver, shares, business stock, receivables and debts. Gold or silver nisab, lunar or solar year, interest purification. Any currency.">
+<link rel="canonical" href="https://flexbhk.github.io/budgetmalin/barakah/en/zakat-calculator.html">
+<link rel="alternate" hreflang="en" href="https://flexbhk.github.io/budgetmalin/barakah/en/zakat-calculator.html">
+<link rel="alternate" hreflang="fr" href="https://flexbhk.github.io/budgetmalin/barakah/calcul-zakat.html">
+<meta property="og:title" content="Zakat Calculator 2027 – Free, Gold & Silver Nisab, Any Currency | Barakah Budget">
+<meta property="og:description" content="Calculate your zakat al-mal for free: cash, savings, gold, silver, shares, business stock, receivables and debts. Gold or silver nisab, lunar or solar year, interest purification. Any currency.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://flexbhk.github.io/budgetmalin/barakah/en/zakat-calculator.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="./">Barakah<span>Budget</span></a>
+  <a class="l" href="zakat-calculator.html">Zakat calculator</a>
+  <a class="l" href="zakat-al-fitr-calculator.html">Zakat al-Fitr</a>
+  <a class="lang" href="../calcul-zakat.html" hreflang="fr" lang="fr">🌐 Français</a>
+</div></header>
+<main class="wrap">
+<h1>Zakat calculator</h1>
+<p class="lead">Enter what you have owned for a full lunar year (hawl): we calculate your zakatable wealth, the nisab and the zakat you owe.</p>
+
+<div class="card">
+  <h2 style="margin-top:0;font-size:1.1rem">1. Currency and metal prices</h2>
+  <div class="row">
+    <div><label for="cur">Currency</label><select id="cur"><option value="USD">US Dollar ($)</option><option value="GBP">British Pound (£)</option><option value="EUR">Euro (€)</option><option value="CAD">Canadian Dollar</option><option value="AUD">Australian Dollar</option><option value="MYR">Malaysian Ringgit</option><option value="SGD">Singapore Dollar</option><option value="AED">UAE Dirham</option><option value="SAR">Saudi Riyal</option><option value="PKR">Pakistani Rupee</option><option value="INR">Indian Rupee</option><option value="ZAR">South African Rand</option></select></div>
+    <div><label for="ref">Nisab threshold</label><select id="ref"><option value="ag">Silver (595 g)</option><option value="or">Gold (85 g)</option></select></div>
+  </div>
+  <div class="row">
+    <div><label for="or">Gold price (per gram)</label><input id="or" type="number" inputmode="decimal" value="120" step="0.01"></div>
+    <div><label for="ag">Silver price (per gram)</label><input id="ag" type="number" inputmode="decimal" value="1.4" step="0.01"></div>
+  </div>
+  <p class="note">⚠️ Example values only: replace them with today's gold and silver price per gram in your currency.</p>
+  <label for="an">Calendar</label><select id="an"><option value="0.025">Lunar year (2.5%)</option><option value="0.02577">Solar year (2.577%)</option></select>
+
+  <h2 style="font-size:1.1rem">2. Your assets</h2>
+  <div class="row">
+    <div><label for="liq">Cash and current accounts</label><input id="liq" type="number" inputmode="decimal" value="3000"></div>
+    <div><label for="epa">Savings (excluding interest)</label><input id="epa" type="number" inputmode="decimal" value="8000"></div>
+  </div>
+  <div class="row">
+    <div><label for="vor">Gold and silver owned (value)</label><input id="vor" type="number" inputmode="decimal" value="0"></div>
+    <div><label for="act">Shares, funds, pensions (zakatable part)</label><input id="act" type="number" inputmode="decimal" value="0"></div>
+  </div>
+  <div class="row">
+    <div><label for="mar">Business stock held for sale</label><input id="mar" type="number" inputmode="decimal" value="0"></div>
+    <div><label for="cre">Money owed to you (recoverable)</label><input id="cre" type="number" inputmode="decimal" value="0"></div>
+  </div>
+
+  <h2 style="font-size:1.1rem">3. Deductions</h2>
+  <div class="row">
+    <div><label for="det">Debts due in the short term</label><input id="det" type="number" inputmode="decimal" value="0"></div>
+    <div><label for="rib">Interest received this year (riba)</label><input id="rib" type="number" inputmode="decimal" value="0"></div>
+  </div>
+
+  <div class="result">
+    <div>Zakat due</div>
+    <div class="big" id="r-z">–</div>
+    <p id="r-msg" style="margin:4px 0 10px"></p>
+    <table>
+      <tr><td>Total assets</td><td id="r-t">–</td></tr>
+      <tr><td>Debts deducted</td><td id="r-d">–</td></tr>
+      <tr><td>Zakatable wealth</td><td id="r-a">–</td></tr>
+      <tr><td>Nisab</td><td id="r-n">–</td></tr>
+      <tr><td>Interest to purify (give away, not zakat)</td><td id="r-p">–</td></tr>
+    </table>
+  </div>
+</div>
+
+
+<div class="cta">
+  <h3>🌙 Zakat & Sadaqah Spreadsheet</h3>
+  <p>Calculate your zakat every year in minutes, track your donations and interest purification. Works with Excel, Google Sheets and LibreOffice. Only <strong class="prix-produit" data-product="zakat_en"></strong>, instant download.</p>
+  <a class="btn cta-produit" data-product="zakat_en" href="#">Download now →</a>
+</div>
+
+<h2>Who has to pay zakat?</h2>
+<p>Zakat al-mal is due from every adult, sane Muslim whose net wealth reaches the <strong>nisab</strong> and stays above it for a full lunar year (the <em>hawl</em>). The rate is <strong>2.5%</strong> of zakatable wealth.</p>
+
+<h2>Gold or silver nisab?</h2>
+<p>The nisab is the value of <strong>85 grams of gold</strong> or <strong>595 grams of silver</strong>. Because the silver nisab is much lower, more people become liable: many scholars recommend it for cash as a precaution and in the interest of the poor. Others use gold. Our calculator lets you choose.</p>
+
+<h2>What about bank interest?</h2>
+<p>Interest (riba) earned on a savings or bank account is not part of your lawful wealth. It is not subject to zakat: remove it and give all of it away to general charitable causes. This is called <strong>purification</strong>.</p>
+
+<h2>Frequently asked questions</h2>
+<details><summary>Do I pay zakat on my home and my car?</summary><p>No. Personal-use assets (your home, car, furniture, clothes) are not zakatable. Property bought to be resold, however, counts as business stock.</p></details>
+<details><summary>How do I count shares and investment funds?</summary><p>If you actively trade, count the full market value. For long-term investments, many scholars only count the zakatable portion of the company's assets (often estimated at around 25 to 30% of the value). Opinions differ: ask a scholar you trust.</p></details>
+<details><summary>What about pensions and retirement savings?</summary><p>There are several opinions: zakat every year on the net accessible value, or zakat only once the money becomes available. Choose the opinion you follow and apply it consistently.</p></details>
+<details><summary>Who can receive zakat?</summary><p>The Qur'an (Surah at-Tawbah, 9:60) names eight categories of recipients, including the poor and the needy. You can give directly or through a trusted charity.</p></details>
+</main>
+<footer><div class="wrap">
+  <p>Free Islamic personal finance tools, no sign-up required. Results are estimates for educational purposes and do not constitute financial or religious advice.</p>
+  <p>© 2026 Barakah Budget</p>
+</div></footer>
+<script src="../../assets/site.js"></script>
+<script>
+bindAll(() => {
+  const c = document.getElementById("cur").value, m = (n, d = 0) => money(n, c, d);
+  const nisab = document.getElementById("ref").value === "or" ? 85 * num("or") : 595 * num("ag");
+  const rate = parseFloat(document.getElementById("an").value);
+  const total = ["liq", "epa", "vor", "act", "mar", "cre"].reduce((s, k) => s + num(k), 0);
+  const det = num("det"), base = Math.max(total - det, 0), ok = base >= nisab && nisab > 0;
+  document.getElementById("r-z").textContent = m(ok ? base * rate : 0, 2);
+  document.getElementById("r-msg").textContent = ok ? "✅ Your wealth reaches the nisab: zakat is due if it has stayed above it for a full lunar year." : "Your wealth is below the nisab: no zakat is due this year.";
+  document.getElementById("r-t").textContent = m(total);
+  document.getElementById("r-d").textContent = "− " + m(det);
+  document.getElementById("r-a").textContent = m(base);
+  document.getElementById("r-n").textContent = m(nisab);
+  document.getElementById("r-p").textContent = m(num("rib"), 2);
+});
+</script>
+
+</body>
+</html>

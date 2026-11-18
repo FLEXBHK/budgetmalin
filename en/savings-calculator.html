@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Savings Calculator with Compound Interest – Free, Any Currency</title>
+<meta name="description" content="See how much you will have by saving every month: final balance, interest earned, year-by-year growth. Free compound interest calculator in any currency.">
+<link rel="canonical" href="https://flexbhk.github.io/budgetmalin/en/savings-calculator.html">
+<link rel="alternate" hreflang="en" href="https://flexbhk.github.io/budgetmalin/en/savings-calculator.html">
+<link rel="alternate" hreflang="fr" href="https://flexbhk.github.io/budgetmalin/simulateur-epargne.html">
+<meta property="og:title" content="Savings Calculator with Compound Interest – Free, Any Currency">
+<meta property="og:description" content="See how much you will have by saving every month: final balance, interest earned, year-by-year growth. Free compound interest calculator in any currency.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://flexbhk.github.io/budgetmalin/en/savings-calculator.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💶</text></svg>">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="./">Budget<span>Malin</span></a>
+  <a class="l" href="loan-calculator.html">Loan</a>
+  <a class="l" href="savings-calculator.html">Savings</a>
+  <a class="l" href="budget-50-30-20.html">50/30/20 Budget</a>
+  <a class="l" href="debt-payoff-calculator.html">Debt payoff</a>
+  <a class="l" href="52-week-savings-challenge.html">52-Week Challenge</a>
+  <a class="lang" href="../simulateur-epargne.html" hreflang="fr" lang="fr">🌐 Français</a>
+</div></header>
+<main class="wrap">
+<h1>Savings calculator</h1>
+<p class="lead">How much will you have in 5, 10 or 20 years by putting a little aside every month? Discover the power of compound interest.</p>
+
+<div class="card">
+  <div class="row">
+    <div><label for="cur">Currency</label><select id="cur"><option value="USD">US Dollar ($)</option><option value="GBP">British Pound (£)</option><option value="EUR">Euro (€)</option><option value="CAD">Canadian Dollar</option><option value="AUD">Australian Dollar</option><option value="NZD">New Zealand Dollar</option><option value="SGD">Singapore Dollar</option><option value="INR">Indian Rupee</option><option value="ZAR">South African Rand</option><option value="AED">UAE Dirham</option></select></div>
+    <div><label for="initial">Starting balance</label><input id="initial" type="number" inputmode="decimal" value="1000"></div>
+  </div>
+  <div class="row">
+    <div><label for="mensuel">Monthly contribution</label><input id="mensuel" type="number" inputmode="decimal" value="200"></div>
+    <div><label for="taux">Annual return (%)</label><input id="taux" type="number" inputmode="decimal" value="5" step="0.1"></div>
+  </div>
+  <label for="annees">Years</label><input id="annees" type="number" value="10" min="1" max="60">
+  <div class="result">
+    <div>Final balance</div>
+    <div class="big" id="r-f">–</div>
+    <div class="bar"><div id="b-v" style="background:var(--brand)"></div><div id="b-i" style="background:var(--accent)"></div></div>
+    <p class="note">■ <span style="color:var(--brand)">Contributions</span> &nbsp; ■ <span style="color:var(--accent)">Interest</span></p>
+    <table>
+      <tr><td>Total contributed</td><td id="r-v">–</td></tr>
+      <tr><td>Interest earned</td><td id="r-i">–</td></tr>
+    </table>
+    <table id="tab" style="margin-top:14px"></table>
+  </div>
+  <p class="note">Before tax, with a constant rate of return. Investments such as shares carry risk and returns are never guaranteed.</p>
+</div>
+
+
+<div class="cta">
+  <h3>💪 The 2027 52-Week Savings Challenge</h3>
+  <p>A tracker spreadsheet + 3 printable PDF charts to colour in. Perfect on the fridge, on your own or with the kids. Only <strong class="prix-produit" data-product="defi52_en"></strong>, instant download.</p>
+  <a class="btn cta-produit" data-product="defi52_en" href="#">Download now →</a>
+</div>
+
+<h2>What is compound interest?</h2>
+<p>When your interest is reinvested, it earns interest of its own. The effect is small at first, then speeds up over time: that is why <strong>starting early matters more than the amount you save</strong>.</p>
+<p>Example: 100 a month for 30 years at 5% grows to about 83,000, while you only paid in 36,000.</p>
+
+<h2>Frequently asked questions</h2>
+<details><summary>How much should I save each month?</summary><p>A common target is 20% of your take-home pay (the 50/30/20 rule). If that is too much, start with 5% and increase gradually: consistency matters most.</p></details>
+<details><summary>Should I set up an automatic transfer?</summary><p>Yes: scheduling a transfer to your savings account on payday is the most effective way to save without thinking about it.</p></details>
+<details><summary>Where should I keep my emergency fund?</summary><p>In an easy-access savings account, separate from your current account. Aim for 3 to 6 months of essential expenses.</p></details>
+</main>
+<footer><div class="wrap">
+  <p>Free money tools, no sign-up required. Results are estimates for educational purposes and do not constitute financial advice.</p>
+  <p>Some links may be affiliate links: they cost you nothing extra and support the site. © 2026 BudgetMalin</p>
+</div></footer>
+<script src="../assets/site.js"></script>
+<script>
+bindAll(() => {
+  const c = document.getElementById("cur").value, m0 = n => money(n, c, 0);
+  const P = num("initial"), V = num("mensuel"), r = Math.pow(1 + num("taux") / 100, 1 / 12) - 1, Y = Math.min(Math.round(num("annees")), 60);
+  let cap = P, rows = "<tr><td><strong>Year</strong></td><td><strong>Balance</strong></td></tr>";
+  for (let y = 1; y <= Y; y++) {
+    for (let m = 0; m < 12; m++) cap = cap * (1 + r) + V;
+    if (Y <= 15 || y % 5 === 0 || y === Y) rows += `<tr><td>${y}</td><td>${m0(cap)}</td></tr>`;
+  }
+  const paid = P + V * 12 * Y, int = cap - paid;
+  document.getElementById("r-f").textContent = m0(cap);
+  document.getElementById("r-v").textContent = m0(paid);
+  document.getElementById("r-i").textContent = m0(int);
+  document.getElementById("b-v").style.width = (cap > 0 ? paid / cap * 100 : 100) + "%";
+  document.getElementById("b-i").style.width = (cap > 0 ? Math.max(int, 0) / cap * 100 : 0) + "%";
+  document.getElementById("tab").innerHTML = rows;
+});
+</script>
+
+</body>
+</html>

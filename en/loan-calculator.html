@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Loan Calculator – Monthly Payment & Total Interest (Free, Any Currency)</title>
+<meta name="description" content="Free loan and mortgage calculator: monthly payment, total interest, total cost and debt-to-income ratio. Works for mortgages, car loans and personal loans, in any currency.">
+<link rel="canonical" href="https://flexbhk.github.io/budgetmalin/en/loan-calculator.html">
+<link rel="alternate" hreflang="en" href="https://flexbhk.github.io/budgetmalin/en/loan-calculator.html">
+<link rel="alternate" hreflang="fr" href="https://flexbhk.github.io/budgetmalin/simulateur-pret.html">
+<meta property="og:title" content="Loan Calculator – Monthly Payment & Total Interest (Free, Any Currency)">
+<meta property="og:description" content="Free loan and mortgage calculator: monthly payment, total interest, total cost and debt-to-income ratio. Works for mortgages, car loans and personal loans, in any currency.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://flexbhk.github.io/budgetmalin/en/loan-calculator.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💶</text></svg>">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="./">Budget<span>Malin</span></a>
+  <a class="l" href="loan-calculator.html">Loan</a>
+  <a class="l" href="savings-calculator.html">Savings</a>
+  <a class="l" href="budget-50-30-20.html">50/30/20 Budget</a>
+  <a class="l" href="debt-payoff-calculator.html">Debt payoff</a>
+  <a class="l" href="52-week-savings-challenge.html">52-Week Challenge</a>
+  <a class="lang" href="../simulateur-pret.html" hreflang="fr" lang="fr">🌐 Français</a>
+</div></header>
+<main class="wrap">
+<h1>Loan calculator</h1>
+<p class="lead">Monthly payment, total interest and debt-to-income ratio: know exactly what your loan will cost before you sign.</p>
+
+<div class="card">
+  <div class="row">
+    <div><label for="cur">Currency</label><select id="cur"><option value="USD">US Dollar ($)</option><option value="GBP">British Pound (£)</option><option value="EUR">Euro (€)</option><option value="CAD">Canadian Dollar</option><option value="AUD">Australian Dollar</option><option value="NZD">New Zealand Dollar</option><option value="SGD">Singapore Dollar</option><option value="INR">Indian Rupee</option><option value="ZAR">South African Rand</option><option value="AED">UAE Dirham</option></select></div>
+    <div><label for="montant">Loan amount</label><input id="montant" type="number" inputmode="decimal" value="250000"></div>
+  </div>
+  <div class="row">
+    <div><label for="duree">Term (years)</label><input id="duree" type="number" value="25" min="1" max="40"></div>
+    <div><label for="taux">Annual interest rate (%)</label><input id="taux" type="number" inputmode="decimal" value="5" step="0.05"></div>
+  </div>
+  <label for="revenus">Gross monthly household income <span class="note">– optional</span></label>
+  <input id="revenus" type="number" inputmode="decimal" value="6000">
+  <div class="result">
+    <div>Monthly payment</div>
+    <div class="big" id="r-m">–</div>
+    <table>
+      <tr><td>Total interest</td><td id="r-ci">–</td></tr>
+      <tr><td>Total repaid</td><td id="r-ct">–</td></tr>
+      <tr><td>Interest as % of the loan</td><td id="r-p">–</td></tr>
+      <tr><td>Payment as % of income</td><td id="r-e">–</td></tr>
+    </table>
+    <p class="note" id="r-msg"></p>
+  </div>
+</div>
+
+
+<div class="cta">
+  <h3>📊 The 2027 Annual Budget Spreadsheet</h3>
+  <p>12 ready-to-fill months, automatic categories, yearly summary and charts. Works with Excel, Google Sheets and LibreOffice, in any currency. Only <strong class="prix-produit" data-product="budget_en"></strong>, instant download.</p>
+  <a class="btn cta-produit" data-product="budget_en" href="#">Download now →</a>
+</div>
+
+<h2>How is the monthly payment calculated?</h2>
+<p>For a standard amortising loan, the payment stays the same every month. It is calculated with the formula <em>M = P × r / (1 − (1 + r)<sup>−n</sup>)</em>, where P is the amount borrowed, r the monthly rate (annual rate ÷ 12) and n the number of payments.</p>
+<p>In the early years, most of each payment goes to interest. Over time, more and more goes to repaying the principal.</p>
+
+<h2>How much can I afford to borrow?</h2>
+<p>Lenders look at your <strong>debt-to-income ratio</strong>: the share of your income that goes to debt repayments. Rules vary by country and lender, but many aim to keep housing costs below roughly 28 to 35% of gross income, and total debt payments below roughly 36 to 43%.</p>
+
+<h2>Frequently asked questions</h2>
+<details><summary>How can I reduce the cost of my loan?</summary><p>Shorten the term, compare several lenders or use a broker, make a bigger down payment, and make extra payments when you can (check for early repayment fees first).</p></details>
+<details><summary>Is a shorter loan always better?</summary><p>A shorter term means higher monthly payments but much less interest overall. Choose the shortest term whose payment you can comfortably afford while keeping an emergency fund.</p></details>
+</main>
+<footer><div class="wrap">
+  <p>Free money tools, no sign-up required. Results are estimates for educational purposes and do not constitute financial advice.</p>
+  <p>Some links may be affiliate links: they cost you nothing extra and support the site. © 2026 BudgetMalin</p>
+</div></footer>
+<script src="../assets/site.js"></script>
+<script>
+bindAll(() => {
+  const c = document.getElementById("cur").value, m0 = (n, d = 0) => money(n, c, d);
+  const P = num("montant"), n = Math.round(num("duree") * 12), r = num("taux") / 100 / 12, inc = num("revenus");
+  const m = n > 0 ? (r > 0 ? P * r / (1 - Math.pow(1 + r, -n)) : P / n) : 0, ci = m * n - P;
+  document.getElementById("r-m").textContent = m0(m);
+  document.getElementById("r-ci").textContent = m0(ci);
+  document.getElementById("r-ct").textContent = m0(m * n);
+  document.getElementById("r-p").textContent = P > 0 ? Math.round(ci / P * 100) + "%" : "–";
+  const e = inc > 0 ? m / inc * 100 : 0;
+  document.getElementById("r-e").textContent = inc > 0 ? e.toFixed(1) + "%" : "–";
+  document.getElementById("r-msg").textContent = inc <= 0 ? "" : e <= 28 ? "✅ Comfortable: under 28% of your income." : e <= 36 ? "🟠 Manageable, but it leaves less room for other debts and savings." : "⚠️ Over 36% of your income: many lenders may consider this too high.";
+});
+</script>
+
+</body>
+</html>

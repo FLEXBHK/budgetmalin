@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>50/30/20 Budget Calculator – Free Tool to Split Your Income</title>
+<meta name="description" content="Apply the 50/30/20 rule to your income: 50% needs, 30% wants, 20% savings. Free calculator in any currency, with a comparison against your current spending.">
+<link rel="canonical" href="https://flexbhk.github.io/budgetmalin/en/budget-50-30-20.html">
+<link rel="alternate" hreflang="en" href="https://flexbhk.github.io/budgetmalin/en/budget-50-30-20.html">
+<link rel="alternate" hreflang="fr" href="https://flexbhk.github.io/budgetmalin/budget-50-30-20.html">
+<meta property="og:title" content="50/30/20 Budget Calculator – Free Tool to Split Your Income">
+<meta property="og:description" content="Apply the 50/30/20 rule to your income: 50% needs, 30% wants, 20% savings. Free calculator in any currency, with a comparison against your current spending.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://flexbhk.github.io/budgetmalin/en/budget-50-30-20.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💶</text></svg>">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="./">Budget<span>Malin</span></a>
+  <a class="l" href="loan-calculator.html">Loan</a>
+  <a class="l" href="savings-calculator.html">Savings</a>
+  <a class="l" href="budget-50-30-20.html">50/30/20 Budget</a>
+  <a class="l" href="debt-payoff-calculator.html">Debt payoff</a>
+  <a class="l" href="52-week-savings-challenge.html">52-Week Challenge</a>
+  <a class="lang" href="../budget-50-30-20.html" hreflang="fr" lang="fr">🌐 Français</a>
+</div></header>
+<main class="wrap">
+<h1>50/30/20 budget calculator</h1>
+<p class="lead">The simplest budgeting method: 50% for needs, 30% for wants, 20% for savings.</p>
+
+<div class="card">
+  <div class="row">
+    <div><label for="cur">Currency</label><select id="cur"><option value="USD">US Dollar ($)</option><option value="GBP">British Pound (£)</option><option value="EUR">Euro (€)</option><option value="CAD">Canadian Dollar</option><option value="AUD">Australian Dollar</option><option value="NZD">New Zealand Dollar</option><option value="SGD">Singapore Dollar</option><option value="INR">Indian Rupee</option><option value="ZAR">South African Rand</option><option value="AED">UAE Dirham</option></select></div>
+    <div><label for="rev">Monthly take-home pay</label><input id="rev" type="number" inputmode="decimal" value="3000"></div>
+  </div>
+  <div class="result">
+    <div class="bar" style="height:22px"><div style="width:50%;background:var(--brand)"></div><div style="width:30%;background:var(--accent)"></div><div style="width:20%;background:var(--ok)"></div></div>
+    <table>
+      <tr><td>🏠 Needs (50%) – rent, groceries, transport, bills</td><td id="r-b">–</td></tr>
+      <tr><td>🎉 Wants (30%) – going out, hobbies, shopping, subscriptions</td><td id="r-e">–</td></tr>
+      <tr><td>💰 Savings (20%) – emergency fund, goals, extra debt payments</td><td id="r-s">–</td></tr>
+    </table>
+  </div>
+  <h2 style="margin-top:24px;font-size:1.1rem">Compare with your current spending</h2>
+  <div class="row">
+    <div><label for="db">Current needs</label><input id="db" type="number" inputmode="decimal" value="1800"></div>
+    <div><label for="de">Current wants</label><input id="de" type="number" inputmode="decimal" value="900"></div>
+  </div>
+  <div class="result" id="r-cmp"></div>
+</div>
+
+
+<div class="cta">
+  <h3>📊 The 2027 Annual Budget Spreadsheet</h3>
+  <p>12 ready-to-fill months, automatic categories, yearly summary and charts. Works with Excel, Google Sheets and LibreOffice, in any currency. Only <strong class="prix-produit" data-product="budget_en"></strong>, instant download.</p>
+  <a class="btn cta-produit" data-product="budget_en" href="#">Download now →</a>
+</div>
+
+<h2>How does the 50/30/20 rule work?</h2>
+<p>Popularised by US Senator Elizabeth Warren, this method splits your take-home pay into three buckets:</p>
+<ul>
+  <li><strong>50% for needs</strong>: everything essential (housing, food, utilities, transport, insurance, minimum loan payments).</li>
+  <li><strong>30% for wants</strong>: what makes life enjoyable but you could live without.</li>
+  <li><strong>20% for savings</strong>: emergency fund, future goals, retirement, or paying off debt faster.</li>
+</ul>
+<p>If your rent is high, adapt it to 60/20/20 or 70/20/10: what matters is keeping a fixed share for savings.</p>
+
+<h2>Frequently asked questions</h2>
+<details><summary>What if my needs are more than 50%?</summary><p>That is common in big cities. Start by renegotiating contracts (insurance, energy, phone, internet) and track your spending for a month to find leaks.</p></details>
+<details><summary>How can I track my budget easily?</summary><p>A spreadsheet with your spending categories is enough. Our Annual Budget Spreadsheet automatically sorts your spending into needs, wants and savings.</p></details>
+</main>
+<footer><div class="wrap">
+  <p>Free money tools, no sign-up required. Results are estimates for educational purposes and do not constitute financial advice.</p>
+  <p>Some links may be affiliate links: they cost you nothing extra and support the site. © 2026 BudgetMalin</p>
+</div></footer>
+<script src="../assets/site.js"></script>
+<script>
+bindAll(() => {
+  const c = document.getElementById("cur").value, m0 = n => money(n, c, 0);
+  const R = num("rev"), db = num("db"), de = num("de"), ds = R - db - de;
+  document.getElementById("r-b").textContent = m0(R * .5);
+  document.getElementById("r-e").textContent = m0(R * .3);
+  document.getElementById("r-s").textContent = m0(R * .2);
+  const pct = x => R > 0 ? Math.round(x / R * 100) + "%" : "–";
+  const line = (lbl, val, goal, ok) => `<tr><td>${lbl}</td><td>${m0(val)} (${pct(val)}) ${ok ? "✅" : "⚠️"} <span class="note">target ${goal}</span></td></tr>`;
+  document.getElementById("r-cmp").innerHTML = "<table>" +
+    line("Needs", db, "50%", db <= R * .5) + line("Wants", de, "30%", de <= R * .3) + line("Left to save", ds, "20%", ds >= R * .2) + "</table>" +
+    (ds < R * .2 ? `<p class="note">You are ${m0(R * .2 - ds)} a month short of saving 20%.</p>` : `<p class="note">Well done, you save at least 20% of your income!</p>`);
+});
+</script>
+
+</body>
+</html>

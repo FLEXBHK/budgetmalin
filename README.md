@@ -1,5 +1,8 @@
-# BudgetMalin
+# BudgetMalin & Barakah Budget
 
-Calculateurs gratuits pour gérer son argent : salaire brut/net, prêt, épargne, budget 50/30/20, dettes, défi 52 semaines, zakat.
+Calculateurs gratuits pour gérer son argent, en français et en anglais.
 
-🌐 https://flexbhk.github.io/budgetmalin/
+- 🇫🇷 BudgetMalin : https://flexbhk.github.io/budgetmalin/
+- 🇬🇧 BudgetMalin : https://flexbhk.github.io/budgetmalin/en/
+- 🌙 Barakah Budget (FR) : https://flexbhk.github.io/budgetmalin/barakah/
+- 🌙 Barakah Budget (EN) : https://flexbhk.github.io/budgetmalin/barakah/en/
